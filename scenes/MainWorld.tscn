@@ -1,10 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://nih7y7tlho4c"]
+[gd_scene load_steps=8 format=3 uid="uid://nih7y7tlho4c"]
 
 [ext_resource type="Texture2D" uid="uid://c75uclyausen4" path="res://art/anvil.png" id="1_s35wj"]
+[ext_resource type="Texture2D" uid="uid://doqyrkj330b0c" path="res://art/AnimationSheet_Character.png" id="3_iuhje"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnvpq"]
+atlas = ExtResource("3_iuhje")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q33qy"]
+atlas = ExtResource("3_iuhje")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi3bs"]
+atlas = ExtResource("3_iuhje")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duhpx"]
+atlas = ExtResource("3_iuhje")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j2nn4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnvpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q33qy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wi3bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duhpx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Main World" type="Node2D"]
 
 [node name="Anvil" type="Sprite2D" parent="."]
-position = Vector2(202, 572)
+z_index = 1
+position = Vector2(288, 579)
 scale = Vector2(0.465625, 0.465625)
 texture = ExtResource("1_s35wj")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(137.312, 528.125)
+scale = Vector2(6.10547, 7.32031)
+sprite_frames = SubResource("SpriteFrames_j2nn4")
+frame_progress = 0.840852
