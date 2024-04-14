@@ -1,9 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://nih7y7tlho4c"]
 
-[ext_resource type="Texture2D" uid="uid://c75uclyausen4" path="res://art/anvil.png" id="1_s35wj"]
 [ext_resource type="Script" path="res://scenes/CharacterBody2D.gd" id="2_elvjs"]
 [ext_resource type="Texture2D" uid="uid://doqyrkj330b0c" path="res://art/AnimationSheet_Character.png" id="3_iuhje"]
 [ext_resource type="Texture2D" uid="uid://btljykvdwe1qd" path="res://art/floor.png" id="3_vhsrf"]
+[ext_resource type="Texture2D" uid="uid://bn2ih61g3ysw3" path="res://art/anvil3.png" id="4_so27g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ur3ya"]
+radius = 459.0
+height = 918.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xnvpq"]
 atlas = ExtResource("3_iuhje")
@@ -41,24 +45,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ur3ya"]
-radius = 459.0
-height = 918.0
-
 [node name="Main World" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("2_elvjs")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(162, 504)
+shape = SubResource("CapsuleShape2D_ur3ya")
+
 [node name="Wizard" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(137.312, 528.125)
 scale = Vector2(6.10547, 7.32031)
 sprite_frames = SubResource("SpriteFrames_j2nn4")
-frame_progress = 0.840852
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(162, 504)
-shape = SubResource("CapsuleShape2D_ur3ya")
+frame_progress = 0.439922
 
 [node name="Floor" type="Sprite2D" parent="CharacterBody2D"]
 z_index = -1
@@ -67,7 +67,6 @@ scale = Vector2(3.7625, 2.35625)
 texture = ExtResource("3_vhsrf")
 
 [node name="Anvil" type="Sprite2D" parent="CharacterBody2D"]
-z_index = 1
-position = Vector2(288, 579)
-scale = Vector2(0.465625, 0.465625)
-texture = ExtResource("1_s35wj")
+position = Vector2(266, 604)
+scale = Vector2(0.453125, 0.459375)
+texture = ExtResource("4_so27g")
