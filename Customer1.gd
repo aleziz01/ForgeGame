@@ -33,6 +33,8 @@ func _process(delta):
 		#animation.play("shuffling")
 	else: 
 		CurrentState = idle
+	if global.drawing==true:
+		position=Vector2(5000,5000)
 
 
 	
