@@ -1,5 +1,5 @@
 extends Area2D
-
+#NOW WE ARE THE PLAYER CONTROL SCENE!!!!
 
 var customer1 = preload("res://Customer1.tscn")
 var simultaneous_scene = preload("res://scenes/drawing.tscn")

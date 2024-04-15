@@ -1,8 +1,9 @@
 extends CharacterBody2D
+#THIS IS THE CUSTOMER SCENE 
 #@onready var animation = $AnimationPlayer
 var StartPos
 var CurrentState= idle
-const speed = 80
+const speed = 300
 var dir = Vector2.LEFT
 
 enum {
