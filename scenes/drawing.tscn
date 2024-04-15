@@ -57,8 +57,8 @@ text = "white"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(608.5, 370)
-scale = Vector2(0.817271, 1.00505)
+position = Vector2(997.5, 559.5)
+scale = Vector2(1.61116, 2.10192)
 texture = ExtResource("2_6dspc")
 
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]

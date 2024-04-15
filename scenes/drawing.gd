@@ -11,7 +11,6 @@ func _input(event: InputEvent):
 	if  !Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		return
 	else:
-		
 		CirclePos.append(event.position)
 		queue_redraw()
 
@@ -33,10 +32,10 @@ func _draw():
 			#draw_circle(point,10, Color.RED)
 			var rect_pos = point  # Adjust position to define top-left corner
 			var rect_size = Vector2(8, 8)  # Define rectangle size
-			rect_pos.x=(int(rect_pos.x)/8)*8
-			rect_pos.y=(int(rect_pos.y)/8)*8
+			rect_pos.x=(int(rect_pos.x)/8)*8 #SEXY AS FUCK (pixel art integration)
+			rect_pos.y=(int(rect_pos.y)/8)*8 #SEXY AS FUCK (pixel art integration)
+			global.matrixdrawingplayer[int(rect_pos.x/8)][int(rect_pos.y/8)]=1
 			draw_rect(Rect2(rect_pos, rect_size), color)  # Draw rectangle
-			
 
 
 
