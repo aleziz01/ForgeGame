@@ -19,8 +19,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and get_overlapping_bodies().size()>0 and global.drawing==false:
 		get_tree().change_scene_to_file ("res://scenes/drawing.tscn")
 		$Floor.hide()
-		$Anvil.hide()
-		$Wizard.hide()
+		$Smith.hide()
 		global.drawing=true
 		
 		

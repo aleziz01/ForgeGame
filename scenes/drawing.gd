@@ -7,13 +7,23 @@ func _on_exit_button_pressed():
 	global.drawing=false
 var color=Color(0, 0, 0)
 
+var ButtonPressed = false
+
 func _input(event: InputEvent):
-	if  !Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		return
-	else:
-		CirclePos.append(event.position)
+	if event is InputEventMouseButton:
+		var mouse = event as InputEventMouseButton
+		if mouse.button_index == MOUSE_BUTTON_LEFT:
+			if mouse.pressed:
+				ButtonPressed = true
+			else:
+				ButtonPressed = false
+# check for the continous boiiiii
+	if ButtonPressed:
+		CirclePos.append(get_global_mouse_position())
 		queue_redraw()
 
+
+	# Handle other input events here if needed
 func _on_yellow_pressed():
 	color=Color(1,1,0)
 func _on_black_pressed():
