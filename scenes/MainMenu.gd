@@ -14,7 +14,7 @@ func _add_a_scene_manually():
 	# it happens after already loading the main scene.
 	get_tree().root.add_child(simultaneous_scene)
 
-func _first_time() -> void:
+func _first_time():
 	DisplayServer.window_set_size(DisplayServer.screen_get_size())
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 	DisplayServer.window_set_vsync_mode(vsync)

@@ -64,9 +64,10 @@ func _on_clear_pressed():
 	pastposition.clear()
 	pastcolor.clear()
 	queue_redraw()
+#next peice 
 func _on_next_pressed():
 	nextpressed+=1
-	if(nextpressed==3):
+	if(nextpressed==2):
 		get_tree().change_scene_to_file ("res://scenes/verification.tscn")
 		global.drawing=false
 # Drawing function

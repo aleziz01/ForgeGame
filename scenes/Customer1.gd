@@ -3,7 +3,7 @@ extends CharacterBody2D
 #@onready var animation = $AnimationPlayer
 var StartPos
 var CurrentState= idle
-const speed = 300
+const speed = 400
 var dir = Vector2.LEFT
 
 enum {
@@ -18,6 +18,7 @@ func move(delta):
 	position += dir*speed*delta
 	if position.x <= StartPos - 600:
 		print("STOP")
+		global.idle = true
 		global.spawn = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

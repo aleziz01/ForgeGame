@@ -16,7 +16,7 @@ func _physics_process(delta):
 	
  
 #swapping to the drawing room
-	if Input.is_action_just_pressed("ui_accept") and get_overlapping_bodies().size()>0 and global.drawing==false:
+	if Input.is_action_just_pressed("ui_accept") and get_overlapping_bodies().size()>0 and global.drawing==false and global.idle == true:
 		get_tree().change_scene_to_file ("res://scenes/drawing.tscn")
 		$Floor.hide()
 		$Smith.hide()
