@@ -55,9 +55,16 @@ offset_right = 1138.0
 offset_bottom = 559.0
 text = "white"
 
+[node name="Clear" type="Button" parent="."]
+offset_left = 1099.0
+offset_top = 317.0
+offset_right = 1156.0
+offset_bottom = 348.0
+text = "clear"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(997.5, 559.5)
+position = Vector2(1251, 690)
 scale = Vector2(1.61116, 2.10192)
 texture = ExtResource("2_6dspc")
 
@@ -68,3 +75,4 @@ texture = ExtResource("2_6dspc")
 [connection signal="pressed" from="green" to="." method="_on_green_pressed"]
 [connection signal="pressed" from="red" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="white" to="." method="_on_white_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]

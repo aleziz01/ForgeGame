@@ -6,20 +6,29 @@ var pixel_colors = []
 
 # Variable to store the current color
 var color = Color(0, 0, 0)  # Default color is black
+var ButtonPressed=false
+
+func _on_exit_button_pressed():
+	get_tree().change_scene_to_file ("res://scenes/MainWorld.tscn")
+	global.drawing=false
 
 func _input(event: InputEvent):
+	var pos = get_global_mouse_position()
+	pos.x = int(pos.x / 8) * 8  # Adjust x position to grid
+	pos.y = int(pos.y / 8) * 8  # Adjust y position to grid
 	if event is InputEventMouseButton:
 		var mouse = event as InputEventMouseButton
 		if mouse.button_index == MOUSE_BUTTON_LEFT:
 			if mouse.pressed:
-
-				var pos = get_global_mouse_position()
-				pos.x = int(pos.x / 8) * 8  # Adjust x position to grid
-				pos.y = int(pos.y / 8) * 8  # Adjust y position to grid
-				pixel_positions.append(pos)
-				# Add the current color to the pixel_colors array
-				pixel_colors.append(color)
-				queue_redraw()
+				ButtonPressed = true
+			else:
+				ButtonPressed = false
+	if ButtonPressed and pos.x<960:
+		pixel_positions.append(pos)
+		# Add the current color to the pixel_colors array
+		pixel_colors.append(color)
+		print(pos)
+		queue_redraw()
 
 # Color change functions
 func _on_yellow_pressed():
@@ -34,6 +43,10 @@ func _on_red_pressed():
 	color = Color(1, 0, 0) 
 func _on_white_pressed():
 	color = Color(1, 1, 1)  
+func _on_clear_pressed():
+	pixel_positions.clear()
+	pixel_colors.clear()
+	queue_redraw()
 
 # Drawing function
 func _draw():
@@ -45,6 +58,8 @@ func _draw():
 		var rect_pos = pos
 		# Draw a rectangle at the pixel's position with its color
 		draw_rect(Rect2(pos, Vector2(8, 8)), col)
+
+
 
 
 
