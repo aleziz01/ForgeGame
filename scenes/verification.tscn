@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7y0s16fq60do"]
+
+[ext_resource type="Script" path="res://scenes/verification.gd" id="1_6lpap"]
+
+[node name="Verification" type="Node2D"]
+script = ExtResource("1_6lpap")
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="ScoreShower" type="RichTextLabel" parent="."]
+offset_left = 495.0
+offset_top = 291.0
+offset_right = 660.0
+offset_bottom = 350.0
+text = "kuh"

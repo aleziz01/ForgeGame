@@ -62,11 +62,22 @@ offset_right = 1156.0
 offset_bottom = 348.0
 text = "clear"
 
+[node name="next" type="Button" parent="."]
+offset_left = 1060.0
+offset_top = 242.0
+offset_right = 1148.0
+offset_bottom = 310.0
+text = "next piece"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(1251, 690)
-scale = Vector2(1.61116, 2.10192)
+position = Vector2(553, 358)
+scale = Vector2(1.97018, 2.52725)
 texture = ExtResource("2_6dspc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(478, 331)
+offset = Vector2(100, 0)
 
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="yellow" to="." method="_on_yellow_pressed"]
@@ -76,3 +87,4 @@ texture = ExtResource("2_6dspc")
 [connection signal="pressed" from="red" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="white" to="." method="_on_white_pressed"]
 [connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]

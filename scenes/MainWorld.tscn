@@ -127,3 +127,7 @@ sprite_frames = SubResource("SpriteFrames_h275k")
 animation = &"idle"
 frame_progress = 0.942057
 speed_scale = 2.3
+
+[node name="Camera2D" type="Camera2D" parent="Area2D"]
+position = Vector2(571, 340)
+zoom = Vector2(0.9, 0.9)

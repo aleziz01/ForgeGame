@@ -30,5 +30,8 @@ text = "LEAVE"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MainMenu"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 325)
+
 [connection signal="pressed" from="MainMenu/MainContainer/Start_button" to="MainMenu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/MainContainer/Exit_button" to="MainMenu" method="_on_exit_button_pressed"]
