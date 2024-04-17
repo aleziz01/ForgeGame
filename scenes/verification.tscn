@@ -13,3 +13,10 @@ offset_left = 495.0
 offset_top = 291.0
 offset_right = 660.0
 offset_bottom = 350.0
+
+[node name="next" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Next Customer!"
+
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]

@@ -13,12 +13,10 @@ func _on_exit_button_pressed():
 	global.drawing=false
 	pixel_positions.clear()
 	pixel_colors.clear()
-	pastposition.clear()
-	pastcolor.clear()
 
 
-var pastposition = []
-var pastcolor = []
+
+
 func _input(event: InputEvent):
 	var pos = get_global_mouse_position()
 	var ok=true
@@ -31,16 +29,16 @@ func _input(event: InputEvent):
 				ButtonPressed = true
 			else:
 				ButtonPressed = false
-	if ButtonPressed and pos.x<210 and pos.y<210 and pos.y>10 and pos.x>10: #makes the canvas that the player will draw in and doesnt let draw outside of it
+	if ButtonPressed==true: #and pos.x<210 and pos.y<210 and pos.y>10 and pos.x>10: #makes the canvas that the player will draw in and doesnt let draw outside of it
 		for i in range(pixel_positions.size()): # verifies if the same position has been crossed and if it was the same color
-			if(pastposition[i]==pos and pastcolor[i]==color):#then it isnt ok so it doesnt register it again since the pixel was already colored
+			if(global.pastposition[i]==pos and global.pastcolor[i]==color):#then it isnt ok so it doesnt register it again since the pixel was already colored
 				ok=false
 		if ok==true:#if its ok it registers the position and everything is normal
 			pixel_positions.append(pos)
 			# Add the current color to the pixel_colors array
 			pixel_colors.append(color)
-			pastposition.append(pos)
-			pastcolor.append(color)
+			global.pastposition.append(pos)
+			global.pastcolor.append(color)
 			queue_redraw()
 		ok=true
 		
@@ -61,15 +59,16 @@ func _on_white_pressed():
 func _on_clear_pressed():
 	pixel_positions.clear()
 	pixel_colors.clear()
-	pastposition.clear()
-	pastcolor.clear()
 	queue_redraw()
 #next peice 
 func _on_next_pressed():
-	nextpressed+=1
+	pixel_positions.clear()
+	pixel_colors.clear()
+	queue_redraw()
 	if(nextpressed==2):
 		get_tree().change_scene_to_file ("res://scenes/verification.tscn")
 		global.drawing=false
+	nextpressed+=1
 # Drawing function
 func _draw():
 	# Iterate over each drawn pixel

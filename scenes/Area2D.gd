@@ -6,6 +6,9 @@ var simultaneous_scene = preload("res://scenes/drawing.tscn")
 
 var customer = customer1.instantiate()
 
+func _on_exit_pressed():
+	get_tree().quit()
+
 #spawning guys
 func _physics_process(delta):
 	if Input.is_action_just_pressed("spawn"):
@@ -23,3 +26,5 @@ func _physics_process(delta):
 		global.drawing=true
 		
 		
+
+

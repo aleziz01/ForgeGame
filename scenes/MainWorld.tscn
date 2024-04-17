@@ -131,3 +131,12 @@ speed_scale = 2.3
 [node name="Camera2D" type="Camera2D" parent="Area2D"]
 position = Vector2(571, 340)
 zoom = Vector2(0.9, 0.9)
+
+[node name="exit" type="Button" parent="Area2D"]
+offset_left = 983.0
+offset_top = 19.0
+offset_right = 1145.0
+offset_bottom = 71.0
+text = "Leave the game"
+
+[connection signal="pressed" from="Area2D/exit" to="Area2D" method="_on_exit_pressed"]
