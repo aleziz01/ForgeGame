@@ -29,7 +29,11 @@ func _input(event: InputEvent):
 				ButtonPressed = true
 			else:
 				ButtonPressed = false
-	if ButtonPressed==true: #and pos.x<210 and pos.y<210 and pos.y>10 and pos.x>10: #makes the canvas that the player will draw in and doesnt let draw outside of it
+
+#this is for the the first scene 
+	if ButtonPressed==true and nextpressed==0 and pos.x<860 and pos.y<800 and pos.y>540 and pos.x>640:
+	
+		  #makes the canvas that the player will draw in and doesnt let draw outside of it
 		for i in range(pixel_positions.size()): # verifies if the same position has been crossed and if it was the same color
 			if(global.pastposition[i]==pos and global.pastcolor[i]==color):#then it isnt ok so it doesnt register it again since the pixel was already colored
 				ok=false
@@ -41,6 +45,41 @@ func _input(event: InputEvent):
 			global.pastcolor.append(color)
 			queue_redraw()
 		ok=true
+
+
+#this is for the the second scene 
+	if ButtonPressed==true and nextpressed==1 and pos.x<1000 and pos.y<1000 and pos.y>240 and pos.x>240:
+	
+		  #makes the canvas that the player will draw in and doesnt let draw outside of it
+		for i in range(pixel_positions.size()): # verifies if the same position has been crossed and if it was the same color
+			if(global.pastposition[i]==pos and global.pastcolor[i]==color):#then it isnt ok so it doesnt register it again since the pixel was already colored
+				ok=false
+		if ok==true:#if its ok it registers the position and everything is normal
+			pixel_positions.append(pos)
+			# Add the current color to the pixel_colors array
+			pixel_colors.append(color)
+			global.pastposition.append(pos)
+			global.pastcolor.append(color)
+			queue_redraw()
+		ok=true
+
+
+#this is for the the third scene 
+	if ButtonPressed==true and nextpressed==2 and pos.x<1000 and pos.y<1000 and pos.y>540 and pos.x>640:
+	
+		  #makes the canvas that the player will draw in and doesnt let draw outside of it
+		for i in range(pixel_positions.size()): # verifies if the same position has been crossed and if it was the same color
+			if(global.pastposition[i]==pos and global.pastcolor[i]==color):#then it isnt ok so it doesnt register it again since the pixel was already colored
+				ok=false
+		if ok==true:#if its ok it registers the position and everything is normal
+			pixel_positions.append(pos)
+			# Add the current color to the pixel_colors array
+			pixel_colors.append(color)
+			global.pastposition.append(pos)
+			global.pastcolor.append(color)
+			queue_redraw()
+		ok=true
+
 		
 
 # Color change functions
