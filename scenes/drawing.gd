@@ -14,7 +14,10 @@ func _on_exit_button_pressed():
 	pixel_positions.clear()
 	pixel_colors.clear()
 
-
+#func _ready():
+	#$Frame.hide()
+	#$Frame2.hide()
+	#$Frame3.hide()
 
 
 func _input(event: InputEvent):
@@ -109,6 +112,9 @@ func _on_clear_pressed():
 #next peice 
 func _on_next_pressed():
 	var swapped 
+		#this is for the GUI
+	
+	
 	if(nextpressed==0): #handle positions and colors
 		for i in pixel_positions.size()-1:  #bubblesort from which sorts it from smallest y position to biggest
 			swapped=false
@@ -186,6 +192,28 @@ func _on_next_pressed():
 	pixel_positions.clear()
 	pixel_colors.clear()
 	queue_redraw()
+	
+	
+
+func _process(delta):
+	if nextpressed == 0:
+		$Frame.show()
+
+	else:
+		$Frame.hide() 
+
+	if nextpressed == 1:
+		$Frame2.show()
+
+	else:
+		$Frame2.hide()
+
+	if nextpressed == 2:
+		$Frame3.show()
+	else:
+		$Frame3.hide()
+ 
+
 # Drawing function
 func _draw():
 	# Iterate over each drawn pixel
