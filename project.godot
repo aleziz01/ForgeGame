@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 global="*res://scenes/global.gd"
 
-[display]
-
-window/size/mode=3
-
 [input]
 
 spawn={
