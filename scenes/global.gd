@@ -11,7 +11,7 @@ var handlepositions = []
 var handlecolors = []
 var bladepositions = []
 var bladecolors = []
-
+var quality = 100
 
 
 # Called when the node enters the scene tree for the first time.
