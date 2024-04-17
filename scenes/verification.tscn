@@ -7,6 +7,7 @@ script = ExtResource("1_6lpap")
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+zoom = Vector2(0.5, 0.5)
 
 [node name="ScoreShower" type="RichTextLabel" parent="."]
 offset_left = 495.0
