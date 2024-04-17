@@ -14,7 +14,9 @@ func _ready():
 
 func _on_next_pressed():
 	get_tree().change_scene_to_file ("res://scenes/MainWorld.tscn")
-
+	global.drawing=false
+	global.pastposition.clear()
+	global.pastcolor.clear()
 
 func _draw():
 	# Iterate over each drawn pixel

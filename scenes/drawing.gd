@@ -62,13 +62,60 @@ func _on_clear_pressed():
 	queue_redraw()
 #next peice 
 func _on_next_pressed():
+	var swapped 
+	if(nextpressed==0): #handle positions and colors
+		for i in pixel_positions.size()-1:  #bubblesort from which sorts it from smallest y position to biggest
+			swapped=false
+			for j in pixel_positions.size()-i-1:
+				if pixel_positions[j].y > pixel_positions[j+1].y:
+					var position_=pixel_positions[j+1]
+					var color=pixel_colors[j+1]
+					pixel_positions[j+1] = pixel_positions[j]
+					pixel_colors[j+1]=pixel_colors[j]
+					pixel_colors[j]=color
+					pixel_positions[j]=position
+					swapped=true
+			if swapped==false:
+				break
+		
+	if(nextpressed==1): #hilt positions and colors
+		for i in pixel_positions.size()-1:  #bubblesort from which sorts it from smallest x position to biggest
+			swapped=false
+			for j in pixel_positions.size()-i-1:
+				if pixel_positions[j].y > pixel_positions[j+1].y:
+					var position_=pixel_positions[j+1]
+					var color=pixel_colors[j+1]
+					pixel_positions[j+1] = pixel_positions[j]
+					pixel_colors[j+1]=pixel_colors[j]
+					pixel_colors[j]=color
+					pixel_positions[j]=position
+					swapped=true
+			if swapped==false:
+				break
+	if(nextpressed==2): #blade positions and colors and quality verification screen
+		for i in pixel_positions.size()-1: #bubblesort from which sorts it from biggest y position to smallest
+			swapped=false
+			for j in pixel_positions.size()-i-1:
+				if pixel_positions[j].y < pixel_positions[j+1].y:
+					var position_=pixel_positions[j+1]
+					var color=pixel_colors[j+1]
+					pixel_positions[j+1] = pixel_positions[j]
+					pixel_colors[j+1]=pixel_colors[j]
+					pixel_colors[j]=color
+					pixel_positions[j]=position
+					swapped=true
+		for i in pixel_positions.size():
+			
+			if swapped==false:
+				break
+		pixel_positions.clear()
+		pixel_colors.clear()
+		queue_redraw()
+		get_tree().change_scene_to_file ("res://scenes/verification.tscn")
+	nextpressed+=1
 	pixel_positions.clear()
 	pixel_colors.clear()
 	queue_redraw()
-	if(nextpressed==2):
-		get_tree().change_scene_to_file ("res://scenes/verification.tscn")
-		global.drawing=false
-	nextpressed+=1
 # Drawing function
 func _draw():
 	# Iterate over each drawn pixel
@@ -79,14 +126,3 @@ func _draw():
 		var rect_pos = pos
 		# Draw a rectangle at the pixel's position with its color
 		draw_rect(Rect2(pos, Vector2(8, 8)), col)
-
-
-
-
-
-
-
-
-
-
-
