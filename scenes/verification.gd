@@ -7,7 +7,8 @@ func score():
 	global.totalscore+=recentscore
 
 func _ready():
-	var scoretext=global.totalscore
+	var scoretext=global.qualityblade
+	print(global.qualityblade)
 	print(scoretext)
 	$ScoreShower.text = str(scoretext)
 	queue_redraw()
@@ -24,7 +25,6 @@ func _draw():
 		# Get the position and color of the pixel
 		var pos = global.pastposition[i]
 		var col = global.pastcolor[i]
-		var rect_pos = pos
 		# Draw a rectangle at the pixel's position with its color
 		draw_rect(Rect2(pos, Vector2(8, 8)), col)
 

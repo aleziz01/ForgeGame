@@ -1,7 +1,7 @@
 extends Node
 var spawn = false
 var drawing=false
-var totalscore=0
+var totalscore
 var idle = false
 var pastcolor = []
 var pastposition = []
@@ -11,7 +11,8 @@ var handlepositions = []
 var handlecolors = []
 var bladepositions = []
 var bladecolors = []
-var quality = 100
-
-
+var qualityblade = 0
+var wantedcolor=Color(0,0,0)
+var wantedcoloramount=1
+var bladesharpnessmax
 # Called when the node enters the scene tree for the first time.

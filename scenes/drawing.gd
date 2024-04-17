@@ -18,6 +18,7 @@ func _on_exit_button_pressed():
 
 
 func _input(event: InputEvent):
+	print(pixel_positions.size())
 	var pos = get_global_mouse_position()
 	var ok=true
 	pos.x = int(pos.x / 8) * 8  # Adjust x position to grid
@@ -37,6 +38,8 @@ func _input(event: InputEvent):
 		for i in range(pixel_positions.size()): # verifies if the same position has been crossed and if it was the same color
 			if(global.pastposition[i]==pos and global.pastcolor[i]==color):#then it isnt ok so it doesnt register it again since the pixel was already colored
 				ok=false
+				print(pixel_positions.size())
+				break
 		if ok==true:#if its ok it registers the position and everything is normal
 			pixel_positions.append(pos)
 			# Add the current color to the pixel_colors array
@@ -54,6 +57,8 @@ func _input(event: InputEvent):
 		for i in range(pixel_positions.size()): # verifies if the same position has been crossed and if it was the same color
 			if(global.pastposition[i]==pos and global.pastcolor[i]==color):#then it isnt ok so it doesnt register it again since the pixel was already colored
 				ok=false
+				print(pixel_positions.size())
+				break
 		if ok==true:#if its ok it registers the position and everything is normal
 			pixel_positions.append(pos)
 			# Add the current color to the pixel_colors array
@@ -71,6 +76,8 @@ func _input(event: InputEvent):
 		for i in range(pixel_positions.size()): # verifies if the same position has been crossed and if it was the same color
 			if(global.pastposition[i]==pos and global.pastcolor[i]==color):#then it isnt ok so it doesnt register it again since the pixel was already colored
 				ok=false
+				print(pixel_positions.size())
+				break
 		if ok==true:#if its ok it registers the position and everything is normal
 			pixel_positions.append(pos)
 			# Add the current color to the pixel_colors array
@@ -112,10 +119,11 @@ func _on_next_pressed():
 					pixel_positions[j+1] = pixel_positions[j]
 					pixel_colors[j+1]=pixel_colors[j]
 					pixel_colors[j]=color
-					pixel_positions[j]=position
+					pixel_positions[j]=position_
 					swapped=true
 			if swapped==false:
 				break
+		
 		#for i in pixel_positions.size():
 			
 	if(nextpressed==1): #hilt positions and colors
@@ -128,7 +136,7 @@ func _on_next_pressed():
 					pixel_positions[j+1] = pixel_positions[j]
 					pixel_colors[j+1]=pixel_colors[j]
 					pixel_colors[j]=color
-					pixel_positions[j]=position
+					pixel_positions[j]=position_
 					swapped=true
 			if swapped==false:
 				break
@@ -142,12 +150,34 @@ func _on_next_pressed():
 					pixel_positions[j+1] = pixel_positions[j]
 					pixel_colors[j+1]=pixel_colors[j]
 					pixel_colors[j]=color
-					pixel_positions[j]=position
+					pixel_positions[j]=position_
 					swapped=true
-		for i in pixel_positions.size():
-			
 			if swapped==false:
 				break
+		var colorcounter=0
+		var sharpnesscounter=0
+		global.bladesharpnessmax=false
+		for i in pixel_positions.size(): #checks how much of the color that the customer wanted exists in the blade
+			if pixel_colors[i]==global.wantedcolor:
+				colorcounter+=1
+		for i in pixel_positions.size()-1: #checks how sharp the blade is
+			if pixel_positions[i].y>pixel_positions[i+1].y and pixel_positions[i].x!=pixel_positions[i+1].x:
+				sharpnesscounter+=1
+			if sharpnesscounter>14:
+				global.qualityblade=70
+				global.bladesharpnessmax=true
+				print(pixel_positions.size())
+				break
+		if(global.bladesharpnessmax==false):
+			global.qualityblade=sharpnesscounter*5
+		if(colorcounter<=7 and global.wantedcoloramount==1):#if the customer wants a bit of the specified color on the blade
+			global.qualityblade+=30
+		if(colorcounter<=15 and colorcounter>=8 and global.wantedcoloramount==2): #if the customer wants some specified color on the blade
+			global.qualityblade+=30
+		if(colorcounter<=40 and colorcounter>=16 and global.wantedcoloramount==3):#if the customer wants a good amount of the specified color on the blade
+			global.qualityblade+=30
+		if(colorcounter>=40 and global.wantedcoloramount==4): #if the customer wants a lot of the specified color on the blade
+			global.qualityblade+=30
 		pixel_positions.clear()
 		pixel_colors.clear()
 		queue_redraw()
@@ -163,6 +193,5 @@ func _draw():
 		# Get the position and color of the pixel
 		var pos = pixel_positions[i]
 		var col = pixel_colors[i]
-		var rect_pos = pos
 		# Draw a rectangle at the pixel's position with its color
 		draw_rect(Rect2(pos, Vector2(8, 8)), col)
