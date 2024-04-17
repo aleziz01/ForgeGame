@@ -48,7 +48,7 @@ func _input(event: InputEvent):
 
 
 #this is for the the second scene 
-	if ButtonPressed==true and nextpressed==1 and pos.x<1000 and pos.y<1000 and pos.y>240 and pos.x>240:
+	if ButtonPressed==true and nextpressed==1 and pos.x<1060 and pos.y<539 and pos.y>339 and pos.x>440:
 	
 		  #makes the canvas that the player will draw in and doesnt let draw outside of it
 		for i in range(pixel_positions.size()): # verifies if the same position has been crossed and if it was the same color
@@ -65,7 +65,7 @@ func _input(event: InputEvent):
 
 
 #this is for the the third scene 
-	if ButtonPressed==true and nextpressed==2 and pos.x<1000 and pos.y<1000 and pos.y>540 and pos.x>640:
+	if ButtonPressed==true and nextpressed==2 and pos.x<940 and pos.y<339 and pos.y>-200 and pos.x>540:
 	
 		  #makes the canvas that the player will draw in and doesnt let draw outside of it
 		for i in range(pixel_positions.size()): # verifies if the same position has been crossed and if it was the same color
@@ -116,12 +116,13 @@ func _on_next_pressed():
 					swapped=true
 			if swapped==false:
 				break
-		
+		#for i in pixel_positions.size():
+			
 	if(nextpressed==1): #hilt positions and colors
 		for i in pixel_positions.size()-1:  #bubblesort from which sorts it from smallest x position to biggest
 			swapped=false
 			for j in pixel_positions.size()-i-1:
-				if pixel_positions[j].y > pixel_positions[j+1].y:
+				if pixel_positions[j].x > pixel_positions[j+1].x:
 					var position_=pixel_positions[j+1]
 					var color=pixel_colors[j+1]
 					pixel_positions[j+1] = pixel_positions[j]
