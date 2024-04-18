@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr3u76joe3r"]
+[gd_scene load_steps=3 format=3 uid="uid://dr3u76joe3r"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1_71dhf"]
+[ext_resource type="AudioStream" uid="uid://p2ttkt6vev7b" path="res://SoundMusic/forge game track.mp3" id="2_4hte6"]
 
 [node name="MAIN" type="Node2D"]
 
@@ -28,7 +29,8 @@ text = "START"
 layout_mode = 2
 text = "LEAVE"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MainMenu"]
+[node name="ForgeTrack" type="AudioStreamPlayer" parent="MainMenu"]
+stream = ExtResource("2_4hte6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 325)
