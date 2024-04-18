@@ -139,4 +139,13 @@ offset_right = 1145.0
 offset_bottom = 71.0
 text = "Leave the game"
 
+[node name="GoPaint" type="Button" parent="Area2D"]
+offset_left = 109.0
+offset_top = 395.0
+offset_right = 200.0
+offset_bottom = 435.0
+text = "Sure dude!"
+icon_alignment = 1
+
 [connection signal="pressed" from="Area2D/exit" to="Area2D" method="_on_exit_pressed"]
+[connection signal="pressed" from="Area2D/GoPaint" to="Area2D" method="_on_go_paint_pressed"]

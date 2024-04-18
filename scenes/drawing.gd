@@ -129,7 +129,37 @@ func _on_next_pressed():
 					swapped=true
 			if swapped==false:
 				break
-		
+		var colorcounter=0
+		var sharpnesscounter=0
+		global.bladesharpnessmax=false
+		for i in pixel_positions.size(): #checks how much of the color that the customer wanted exists in the blade
+			if pixel_colors[i]==global.wantedcolorhandle:
+				colorcounter+=1
+		for i in pixel_positions.size()-1: #checks how sharp the blade is
+			if pixel_positions[i].y<pixel_positions[i+1].y and pixel_positions[i].x!=pixel_positions[i+1].x:
+				sharpnesscounter+=1
+			if sharpnesscounter>14 and global.wantedsharpnesshandle==0:
+				global.qualityhandle=70
+				global.bladesharpnessmax=true
+				break
+			elif sharpnesscounter>14 and global.wantedsharpnesshandle==1:
+				global.qualityhandle=0
+				global.bladesharpnessmax=true
+				break
+		if(global.bladesharpnessmax==false and global.wantedsharpnesshandle==0):
+			global.qualityhandle=sharpnesscounter*5
+		elif(global.bladesharpnessmax==false and global.wantedsharpnesshandle==1):
+			global.qualityhandle=70-sharpnesscounter*5
+		if(colorcounter<=7 and global.wantedcoloramounthandle==1):#if the customer wants a bit of the specified color on the blade
+			global.qualityhandle+=30
+		if(colorcounter<=15 and colorcounter>=8 and global.wantedcoloramounthandle==2): #if the customer wants some specified color on the blade
+			global.qualityhandle+=30
+		if(colorcounter<=40 and colorcounter>=16 and global.wantedcoloramounthandle==3):#if the customer wants a good amount of the specified color on the blade
+			global.qualityhandle+=30
+		if(colorcounter>=40 and global.wantedcoloramounthandle==4): #if the customer wants a lot of the specified color on the blade
+			global.qualityhandle+=30
+		if(global.wantedcoloramounthandle==0): #if the customer doesnt specify the amount of color or the color
+			global.qualityhandle+=30
 		#for i in pixel_positions.size():
 			
 	if(nextpressed==1): #hilt positions and colors
@@ -146,6 +176,31 @@ func _on_next_pressed():
 					swapped=true
 			if swapped==false:
 				break
+		var colorcounter=0
+		var sharpnesscounter=0
+		global.bladesharpnessmax=false
+		for i in pixel_positions.size(): #checks how much of the color that the customer wanted exists in the blade
+			if pixel_colors[i]==global.wantedcolorhilt:
+				colorcounter+=1
+		for i in pixel_positions.size()-1: #checks how sharp the blade is
+			if pixel_positions[i].y!=pixel_positions[i+1].y and pixel_positions[i].x!=pixel_positions[i+1].x:
+				sharpnesscounter+=1
+			if sharpnesscounter>14:
+				global.qualityhilt=70
+				global.bladesharpnessmax=true
+				break
+		if(global.bladesharpnessmax==false):
+			global.qualityhilt=sharpnesscounter*5
+		if(colorcounter<=7 and global.wantedcoloramounthilt==1):#if the customer wants a bit of the specified color on the blade
+			global.qualityhilt+=30
+		if(colorcounter<=15 and colorcounter>=8 and global.wantedcoloramounthilt==2): #if the customer wants some specified color on the blade
+			global.qualityhilt+=30
+		if(colorcounter<=40 and colorcounter>=16 and global.wantedcoloramounthilt==3):#if the customer wants a good amount of the specified color on the blade
+			global.qualityhilt+=30
+		if(colorcounter>=40 and global.wantedcoloramounthilt==4): #if the customer wants a lot of the specified color on the blade
+			global.qualityhilt+=30
+		if(global.wantedcoloramounthilt==0): #if the customer doesnt specify the amount of color or the color
+			global.qualityhilt+=30
 	if(nextpressed==2): #blade positions and colors and quality verification screen
 		for i in pixel_positions.size()-1: #bubblesort from which sorts it from biggest y position to smallest
 			swapped=false
@@ -164,25 +219,26 @@ func _on_next_pressed():
 		var sharpnesscounter=0
 		global.bladesharpnessmax=false
 		for i in pixel_positions.size(): #checks how much of the color that the customer wanted exists in the blade
-			if pixel_colors[i]==global.wantedcolor:
+			if pixel_colors[i]==global.wantedcolorblade:
 				colorcounter+=1
 		for i in pixel_positions.size()-1: #checks how sharp the blade is
-			if pixel_positions[i].y>pixel_positions[i+1].y and pixel_positions[i].x!=pixel_positions[i+1].x:
+			if pixel_positions[i].y!=pixel_positions[i+1].y and pixel_positions[i].x!=pixel_positions[i+1].x:
 				sharpnesscounter+=1
 			if sharpnesscounter>14:
 				global.qualityblade=70
 				global.bladesharpnessmax=true
-				print(pixel_positions.size())
 				break
 		if(global.bladesharpnessmax==false):
 			global.qualityblade=sharpnesscounter*5
-		if(colorcounter<=7 and global.wantedcoloramount==1):#if the customer wants a bit of the specified color on the blade
+		if(colorcounter<=7 and global.wantedcoloramountblade==1):#if the customer wants a bit of the specified color on the blade
 			global.qualityblade+=30
-		if(colorcounter<=15 and colorcounter>=8 and global.wantedcoloramount==2): #if the customer wants some specified color on the blade
+		if(colorcounter<=15 and colorcounter>=8 and global.wantedcoloramountblade==2): #if the customer wants some specified color on the blade
 			global.qualityblade+=30
-		if(colorcounter<=40 and colorcounter>=16 and global.wantedcoloramount==3):#if the customer wants a good amount of the specified color on the blade
+		if(colorcounter<=40 and colorcounter>=16 and global.wantedcoloramountblade==3):#if the customer wants a good amount of the specified color on the blade
 			global.qualityblade+=30
-		if(colorcounter>=40 and global.wantedcoloramount==4): #if the customer wants a lot of the specified color on the blade
+		if(colorcounter>=40 and global.wantedcoloramountblade==4): #if the customer wants a lot of the specified color on the blade
+			global.qualityblade+=30
+		if(global.wantedcoloramountblade==0): #if the customer doesnt specify the amount of color or the color
 			global.qualityblade+=30
 		pixel_positions.clear()
 		pixel_colors.clear()

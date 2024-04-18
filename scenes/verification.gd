@@ -7,9 +7,7 @@ func score():
 	global.totalscore+=recentscore
 
 func _ready():
-	var scoretext=global.qualityblade
-	print(global.qualityblade)
-	print(scoretext)
+	var scoretext=(global.qualityblade+global.qualityhilt+global.qualityhandle)/3
 	$ScoreShower.text = str(scoretext)
 	queue_redraw()
 
@@ -18,6 +16,10 @@ func _on_next_pressed():
 	global.drawing=false
 	global.pastposition.clear()
 	global.pastcolor.clear()
+	global.qualityblade=0
+	global.qualityhandle=0
+	global.qualityhilt=0
+	global.customercounter+=1
 
 func _draw():
 	# Iterate over each drawn pixel

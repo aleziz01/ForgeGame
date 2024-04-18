@@ -16,15 +16,11 @@ func _physics_process(delta):
 		var customer = customer1.instantiate()
 		customer.position = Vector2(1000,500)
 		add_child(customer)
-	
- 
-#swapping to the drawing room
-	if Input.is_action_just_pressed("ui_accept") and get_overlapping_bodies().size()>0 and global.drawing==false and global.idle == true:
+		
+		
+func _on_go_paint_pressed():
+	if get_overlapping_bodies().size()>0 and global.drawing==false and global.idle == true:
 		get_tree().change_scene_to_file ("res://scenes/drawing.tscn")
 		$Floor.hide()
 		$Smith.hide()
 		global.drawing=true
-		
-		
-
-
