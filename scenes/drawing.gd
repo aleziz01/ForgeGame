@@ -105,6 +105,9 @@ func _on_gray_pressed():
 	color = Color(0.5,0.5,0.5)
 func _on_light_blue_pressed():
 	color = Color(0.129, 0.855, 0.922)
+func _on_brown_pressed():
+	color = Color(0.541, 0.286, 0.031)
+
 func _on_clear_pressed():
 	pixel_positions.clear()
 	pixel_colors.clear()
@@ -281,6 +284,8 @@ func _draw():
 		var col = pixel_colors[i]
 		# Draw a rectangle at the pixel's position with its color
 		draw_rect(Rect2(pos, Vector2(8, 8)), col)
+
+
 
 
 

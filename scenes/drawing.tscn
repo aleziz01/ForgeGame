@@ -16,6 +16,11 @@ offset_right = 1259.0
 offset_bottom = 586.0
 text = "exit"
 
+[node name="brown" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "brown"
+
 [node name="yellow" type="Button" parent="."]
 offset_left = 1156.0
 offset_top = 373.0
@@ -115,6 +120,7 @@ scale = Vector2(18.9677, 10.9333)
 texture = ExtResource("5_4fqmk")
 
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="brown" to="." method="_on_brown_pressed"]
 [connection signal="pressed" from="yellow" to="." method="_on_yellow_pressed"]
 [connection signal="pressed" from="black" to="." method="_on_black_pressed"]
 [connection signal="pressed" from="blue" to="." method="_on_blue_pressed"]
