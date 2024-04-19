@@ -13,13 +13,14 @@ enum {
 
 func _ready():
 	StartPos = position.x 
-	
+	print(position)
 		
 
 func move(delta):
 	position += dir*speed*delta
 	if position.x <= StartPos - 900:
 		print("STOP")
+		
 		global.idle = true
 		global.spawn = false
 func talk():
@@ -66,25 +67,23 @@ func _process(delta):
 	#first customer/ WIZARD
 	if global.spawn == true and global.customercounter==1:
 		CurrentState = moving
-		var anim = $wizard
+		var anim = $customer
 		anim.play("ShuffleLeft")
-	else: 
+	elif global.customercounter==1: 
 		CurrentState = idle
-		var anim = $wizard
+		var anim = $customer
 		anim.play("Still")
-	if global.drawing==true:
-		position=Vector2(5000,5000)
+	
 	#Second customer / SMITHS BROTHER?
 	
 	
 	if global.spawn == true and global.customercounter==2:
 		CurrentState = moving
-		var anim = $wizard
-		anim.play("SmithBro")
-		print("play the animation")
+		var anim = $customer
+		anim.play("SmithIdle")
 	elif global.customercounter==2:
 		CurrentState = idle
-		var anim = $wizard
+		var anim = $customer
 		anim.play("SmithIdle")
 	if global.drawing==true:
 		position=Vector2(5000,5000)

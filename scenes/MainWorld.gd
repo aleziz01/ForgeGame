@@ -51,3 +51,4 @@ func _on_go_paint_pressed():
 		$Smith.hide()
 		$GoPaint.hide()
 		global.drawing=true
+		global.spawn=true

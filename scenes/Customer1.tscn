@@ -184,7 +184,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"SmithBro",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -242,12 +242,14 @@ size = Vector2(182, 235)
 [node name="Customer1" type="CharacterBody2D"]
 script = ExtResource("1_0m3n1")
 
-[node name="wizard" type="AnimatedSprite2D" parent="."]
+[node name="customer" type="AnimatedSprite2D" parent="."]
 position = Vector2(-13, -30)
 scale = Vector2(5.71875, 5.875)
 sprite_frames = SubResource("SpriteFrames_lfxfw")
 animation = &"SmithIdle"
+
 frame_progress = 0.0504471
+
 speed_scale = 5.09
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
