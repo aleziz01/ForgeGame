@@ -1,8 +1,87 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr3u76joe3r"]
+[gd_scene load_steps=18 format=3 uid="uid://dr3u76joe3r"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1_71dhf"]
 [ext_resource type="AudioStream" uid="uid://gntpk3vmqmov" path="res://SoundMusic/forge game track2.mp3" id="2_np5qi"]
 [ext_resource type="AudioStream" uid="uid://b4g05n5lonuqh" path="res://SoundMusic/Wforge.mp3" id="3_75kl5"]
+[ext_resource type="Texture2D" uid="uid://bau17veh6vsic" path="res://art/AnvilSpriteSheet.png" id="4_sg2aj"]
+[ext_resource type="Script" path="res://scenes/AnimatedSprite2D.gd" id="5_24t63"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0v7sa"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53qmy"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2ipl"]
+atlas = ExtResource("4_sg2aj")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxv5i"]
+atlas = ExtResource("4_sg2aj")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8j1y"]
+atlas = ExtResource("4_sg2aj")
+region = Rect2(1280, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8lj3"]
+atlas = ExtResource("4_sg2aj")
+region = Rect2(1920, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3uwf"]
+atlas = ExtResource("4_sg2aj")
+region = Rect2(2560, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0l55"]
+atlas = ExtResource("4_sg2aj")
+region = Rect2(3200, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wlvy"]
+atlas = ExtResource("4_sg2aj")
+region = Rect2(3840, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7duxk"]
+atlas = ExtResource("4_sg2aj")
+region = Rect2(4480, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7pg1"]
+atlas = ExtResource("4_sg2aj")
+region = Rect2(5120, 0, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iia6m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2ipl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxv5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8j1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8lj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3uwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0l55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wlvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7duxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7pg1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MAIN" type="Node2D"]
 
@@ -16,19 +95,38 @@ script = ExtResource("1_71dhf")
 [node name="Sprite2D" type="Sprite2D" parent="MainMenu"]
 
 [node name="MainContainer" type="VBoxContainer" parent="MainMenu"]
-layout_mode = 0
-offset_left = 442.0
-offset_top = 260.0
-offset_right = 723.0
-offset_bottom = 419.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 11.05
+anchor_top = 6.5
+anchor_right = 17.675
+anchor_bottom = 9.1
+offset_top = -3.05176e-05
+offset_right = -6.10352e-05
 
 [node name="Start_button" type="Button" parent="MainMenu/MainContainer"]
 layout_mode = 2
 text = "START"
 
+[node name="Panel" type="Panel" parent="MainMenu/MainContainer/Start_button"]
+z_index = -1
+layout_mode = 0
+offset_right = 262.0
+offset_bottom = 30.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0v7sa")
+
 [node name="Exit_button" type="Button" parent="MainMenu/MainContainer"]
 layout_mode = 2
 text = "LEAVE"
+
+[node name="Panel" type="Panel" parent="MainMenu/MainContainer/Exit_button"]
+z_index = -1
+layout_mode = 0
+offset_right = 264.0
+offset_bottom = 31.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_53qmy")
 
 [node name="ForgeTrack" type="AudioStreamPlayer" parent="MainMenu"]
 stream = ExtResource("2_np5qi")
@@ -38,6 +136,14 @@ stream = ExtResource("3_75kl5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 325)
+zoom = Vector2(1.95, 1.95)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -2
+position = Vector2(561, 320)
+sprite_frames = SubResource("SpriteFrames_iia6m")
+speed_scale = 0.6
+script = ExtResource("5_24t63")
 
 [connection signal="pressed" from="MainMenu/MainContainer/Start_button" to="MainMenu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/MainContainer/Exit_button" to="MainMenu" method="_on_exit_button_pressed"]
