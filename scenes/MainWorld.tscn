@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://nih7y7tlho4c"]
+[gd_scene load_steps=20 format=3 uid="uid://nih7y7tlho4c"]
 
 [ext_resource type="Script" path="res://scenes/MainWorld.gd" id="1_n2hab"]
+[ext_resource type="Texture2D" uid="uid://dkuflqakndl2v" path="res://art/Nfloor.png" id="3_0etii"]
 [ext_resource type="Texture2D" uid="uid://d1yvicxplk6p4" path="res://art/ourman.png" id="3_3643l"]
-[ext_resource type="Texture2D" uid="uid://btljykvdwe1qd" path="res://art/floor.png" id="3_vhsrf"]
+[ext_resource type="FontFile" uid="uid://bcbw4ofco1tf0" path="res://Fonts/joystix monospace.otf" id="4_8jylk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4umlv"]
 radius = 447.0
@@ -111,18 +112,112 @@ animations = [{
 [node name="Mainworld" type="Area2D" parent="."]
 script = ExtResource("1_n2hab")
 
+[node name="Nfloor" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(160, 496)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor2" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(480, 496)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor3" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(800, 496)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor4" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(1120, 496)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor5" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(1120, 176)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor6" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(800, 176)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor7" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(480, 176)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor8" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(160, 176)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor9" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(-160, 176)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor12" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(-160, 496)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor16" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(-160, 816)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor17" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(160, 816)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor18" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(480, 816)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor19" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(800, 816)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor20" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(1120, 816)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor10" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(-160, -144)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor11" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(160, -144)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor13" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(480, -144)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor14" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(800, -144)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor15" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(1120, -144)
+texture = ExtResource("3_0etii")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mainworld"]
 position = Vector2(173, 497)
 shape = SubResource("CircleShape2D_4umlv")
 
-[node name="Floor" type="Sprite2D" parent="Mainworld"]
-z_index = -1
-position = Vector2(565, 301)
-scale = Vector2(3.7625, 2.35625)
-texture = ExtResource("3_vhsrf")
-
 [node name="Smith" type="AnimatedSprite2D" parent="Mainworld"]
-position = Vector2(171, 546)
+position = Vector2(176, 512)
 sprite_frames = SubResource("SpriteFrames_h275k")
 animation = &"idle"
 frame_progress = 0.942057
@@ -140,12 +235,19 @@ offset_bottom = 71.0
 text = "Leave the game"
 
 [node name="GoPaint" type="Button" parent="Mainworld"]
-offset_left = 109.0
-offset_top = 395.0
-offset_right = 200.0
-offset_bottom = 435.0
+offset_top = 304.0
+offset_right = 166.0
+offset_bottom = 344.0
+theme_override_fonts/font = ExtResource("4_8jylk")
+theme_override_font_sizes/font_size = 19
 text = "Sure dude!"
 icon_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="Mainworld/exit" to="Mainworld" method="_on_exit_pressed"]
 [connection signal="pressed" from="Mainworld/GoPaint" to="Mainworld" method="_on_go_paint_pressed"]

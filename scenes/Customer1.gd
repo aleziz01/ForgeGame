@@ -1,6 +1,6 @@
 extends CharacterBody2D
 #THIS IS THE CUSTOMER SCENE 
-#@onready var animation = $AnimationPlayer
+
 var StartPos
 var CurrentState= idle
 const speed = 400
@@ -13,10 +13,12 @@ enum {
 
 func _ready():
 	StartPos = position.x 
+	
+		
 
 func move(delta):
 	position += dir*speed*delta
-	if position.x <= StartPos - 600:
+	if position.x <= StartPos - 900:
 		print("STOP")
 		global.idle = true
 		global.spawn = false
@@ -58,16 +60,32 @@ func _process(delta):
 				talk()
 			moving:
 				move(delta)
+		
 
 	position.y = 500
-	if global.spawn == true:
+	#first customer/ WIZARD
+	if global.spawn == true and global.customercounter==1:
 		CurrentState = moving
-		#animation.play("shuffling")
+		var anim = $wizard
+		anim.play("ShuffleLeft")
 	else: 
 		CurrentState = idle
+		var anim = $wizard
+		anim.play("Still")
 	if global.drawing==true:
 		position=Vector2(5000,5000)
-
-
+	#Second customer / SMITHS BROTHER?
 	
+	
+	if global.spawn == true and global.customercounter==2:
+		CurrentState = moving
+		var anim = $wizard
+		anim.play("SmithBro")
+		print("play the animation")
+	elif global.customercounter==2:
+		CurrentState = idle
+		var anim = $wizard
+		anim.play("SmithIdle")
+	if global.drawing==true:
+		position=Vector2(5000,5000)
 
