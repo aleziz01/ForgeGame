@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7banu8cjmyyx"]
+
+[ext_resource type="Script" path="res://scenes/textbox1.gd" id="1_xpb6n"]
+
+[node name="Textbox1" type="RichTextLabel"]
+offset_left = -236.0
+offset_top = -414.0
+offset_right = 467.0
+offset_bottom = -328.0
+tab_size = 7
+script = ExtResource("1_xpb6n")

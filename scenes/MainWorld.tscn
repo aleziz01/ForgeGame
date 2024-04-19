@@ -1,8 +1,8 @@
 [gd_scene load_steps=19 format=3 uid="uid://nih7y7tlho4c"]
 
+[ext_resource type="Script" path="res://scenes/MainWorld.gd" id="1_n2hab"]
 [ext_resource type="Texture2D" uid="uid://d1yvicxplk6p4" path="res://art/ourman.png" id="3_3643l"]
 [ext_resource type="Texture2D" uid="uid://btljykvdwe1qd" path="res://art/floor.png" id="3_vhsrf"]
-[ext_resource type="Script" path="res://scenes/Area2D.gd" id="5_u0qy3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4umlv"]
 radius = 447.0
@@ -108,38 +108,38 @@ animations = [{
 
 [node name="Main World" type="Node2D"]
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("5_u0qy3")
+[node name="Mainworld" type="Area2D" parent="."]
+script = ExtResource("1_n2hab")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mainworld"]
 position = Vector2(173, 497)
 shape = SubResource("CircleShape2D_4umlv")
 
-[node name="Floor" type="Sprite2D" parent="Area2D"]
+[node name="Floor" type="Sprite2D" parent="Mainworld"]
 z_index = -1
 position = Vector2(565, 301)
 scale = Vector2(3.7625, 2.35625)
 texture = ExtResource("3_vhsrf")
 
-[node name="Smith" type="AnimatedSprite2D" parent="Area2D"]
+[node name="Smith" type="AnimatedSprite2D" parent="Mainworld"]
 position = Vector2(171, 546)
 sprite_frames = SubResource("SpriteFrames_h275k")
 animation = &"idle"
 frame_progress = 0.942057
 speed_scale = 2.3
 
-[node name="Camera2D" type="Camera2D" parent="Area2D"]
+[node name="Camera2D" type="Camera2D" parent="Mainworld"]
 position = Vector2(571, 340)
 zoom = Vector2(0.9, 0.9)
 
-[node name="exit" type="Button" parent="Area2D"]
+[node name="exit" type="Button" parent="Mainworld"]
 offset_left = 983.0
 offset_top = 19.0
 offset_right = 1145.0
 offset_bottom = 71.0
 text = "Leave the game"
 
-[node name="GoPaint" type="Button" parent="Area2D"]
+[node name="GoPaint" type="Button" parent="Mainworld"]
 offset_left = 109.0
 offset_top = 395.0
 offset_right = 200.0
@@ -147,5 +147,5 @@ offset_bottom = 435.0
 text = "Sure dude!"
 icon_alignment = 1
 
-[connection signal="pressed" from="Area2D/exit" to="Area2D" method="_on_exit_pressed"]
-[connection signal="pressed" from="Area2D/GoPaint" to="Area2D" method="_on_go_paint_pressed"]
+[connection signal="pressed" from="Mainworld/exit" to="Mainworld" method="_on_exit_pressed"]
+[connection signal="pressed" from="Mainworld/GoPaint" to="Mainworld" method="_on_go_paint_pressed"]

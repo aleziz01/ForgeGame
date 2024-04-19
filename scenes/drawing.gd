@@ -21,7 +21,6 @@ func _on_exit_button_pressed():
 
 
 func _input(event: InputEvent):
-	print(pixel_positions.size())
 	var pos = get_global_mouse_position()
 	var ok=true
 	pos.x = int(pos.x / 8) * 8  # Adjust x position to grid
@@ -41,7 +40,6 @@ func _input(event: InputEvent):
 		for i in range(pixel_positions.size()): # verifies if the same position has been crossed and if it was the same color
 			if(global.pastposition[i]==pos and global.pastcolor[i]==color):#then it isnt ok so it doesnt register it again since the pixel was already colored
 				ok=false
-				print(pixel_positions.size())
 				break
 		if ok==true:#if its ok it registers the position and everything is normal
 			pixel_positions.append(pos)
@@ -60,7 +58,6 @@ func _input(event: InputEvent):
 		for i in range(pixel_positions.size()): # verifies if the same position has been crossed and if it was the same color
 			if(global.pastposition[i]==pos and global.pastcolor[i]==color):#then it isnt ok so it doesnt register it again since the pixel was already colored
 				ok=false
-				print(pixel_positions.size())
 				break
 		if ok==true:#if its ok it registers the position and everything is normal
 			pixel_positions.append(pos)
@@ -79,7 +76,6 @@ func _input(event: InputEvent):
 		for i in range(pixel_positions.size()): # verifies if the same position has been crossed and if it was the same color
 			if(global.pastposition[i]==pos and global.pastcolor[i]==color):#then it isnt ok so it doesnt register it again since the pixel was already colored
 				ok=false
-				print(pixel_positions.size())
 				break
 		if ok==true:#if its ok it registers the position and everything is normal
 			pixel_positions.append(pos)
@@ -92,19 +88,23 @@ func _input(event: InputEvent):
 
 		
 
-# Color change functions
+# Color change functions, to make a button and link it to the script look for a 4 minute signal tutorial
 func _on_yellow_pressed():
-	color = Color(1, 1, 0)  
+	color = Color(1, 1, 0)
 func _on_black_pressed():
-	color = Color(0, 0, 0)  
+	color = Color(0, 0, 0)
 func _on_green_pressed():
-	color = Color(0, 1, 0) 
+	color = Color(0, 1, 0)
 func _on_blue_pressed():
-	color = Color(0, 0, 1) 
+	color = Color(0, 0, 1)
 func _on_red_pressed():
-	color = Color(1, 0, 0) 
-func _on_white_pressed():
-	color = Color(1, 1, 1)  
+	color = Color(1, 0, 0)
+func _on_eraser_pressed():
+	color = Color(1, 1, 1)
+func _on_gray_pressed():
+	color = Color(0.5,0.5,0.5)
+func _on_light_blue_pressed():
+	color = Color(0.129, 0.855, 0.922)
 func _on_clear_pressed():
 	pixel_positions.clear()
 	pixel_colors.clear()
@@ -138,18 +138,20 @@ func _on_next_pressed():
 		for i in pixel_positions.size()-1: #checks how sharp the blade is
 			if pixel_positions[i].y<pixel_positions[i+1].y and pixel_positions[i].x!=pixel_positions[i+1].x:
 				sharpnesscounter+=1
-			if sharpnesscounter>14 and global.wantedsharpnesshandle==0:
+			if sharpnesscounter>14 and global.wantedsharpnesshandle==1:
 				global.qualityhandle=70
 				global.bladesharpnessmax=true
 				break
-			elif sharpnesscounter>14 and global.wantedsharpnesshandle==1:
+			elif sharpnesscounter>14 and global.wantedsharpnesshandle==2:
 				global.qualityhandle=0
 				global.bladesharpnessmax=true
 				break
-		if(global.bladesharpnessmax==false and global.wantedsharpnesshandle==0):
+		if(global.bladesharpnessmax==false and global.wantedsharpnesshandle==1):
 			global.qualityhandle=sharpnesscounter*5
-		elif(global.bladesharpnessmax==false and global.wantedsharpnesshandle==1):
+		elif(global.bladesharpnessmax==false and global.wantedsharpnesshandle==2):
 			global.qualityhandle=70-sharpnesscounter*5
+		if(global.wantedsharpnesshandle==0):
+			global.qualityhandle=70
 		if(colorcounter<=7 and global.wantedcoloramounthandle==1):#if the customer wants a bit of the specified color on the blade
 			global.qualityhandle+=30
 		if(colorcounter<=15 and colorcounter>=8 and global.wantedcoloramounthandle==2): #if the customer wants some specified color on the blade
@@ -279,3 +281,10 @@ func _draw():
 		var col = pixel_colors[i]
 		# Draw a rectangle at the pixel's position with its color
 		draw_rect(Rect2(pos, Vector2(8, 8)), col)
+
+
+
+
+
+
+
