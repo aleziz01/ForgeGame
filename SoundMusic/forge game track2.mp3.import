@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gntpk3vmqmov"
+path="res://.godot/imported/forge game track2.mp3-0da63340774f2f40387bf8c93a4a2a18.mp3str"
+
+[deps]
+
+source_file="res://SoundMusic/forge game track2.mp3"
+dest_files=["res://.godot/imported/forge game track2.mp3-0da63340774f2f40387bf8c93a4a2a18.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

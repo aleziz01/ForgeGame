@@ -30,13 +30,18 @@ func _first_time():
 	settings_file.save("res://settings.cfg")
 
 func _on_start_button_pressed():
+	$Welcome.play()
+	$ForgeTrack.stop()
+	await get_tree().create_timer(4.5).timeout
 	# Put your load scene here
 	# Check the documentation https://docs.godotengine.org/en/stable/tutorials/scripting/change_scenes_manually.html
 	#remove_child($MainMusic)
 	_add_a_scene_manually()
 	get_node("/root/MAIN").queue_free()
+	
 	pass  # Replace with function body.
 
+	
 func _on_exit_button_pressed():
 	get_tree().quit()
 
