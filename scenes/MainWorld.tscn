@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://nih7y7tlho4c"]
 
 [ext_resource type="Texture2D" uid="uid://d1yvicxplk6p4" path="res://art/ourman.png" id="3_3643l"]
-[ext_resource type="Texture2D" uid="uid://btljykvdwe1qd" path="res://art/floor.png" id="3_vhsrf"]
+[ext_resource type="Texture2D" uid="uid://dkuflqakndl2v" path="res://art/Nfloor.png" id="3_wr366"]
 [ext_resource type="Script" path="res://scenes/Area2D.gd" id="5_u0qy3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4umlv"]
@@ -107,45 +107,185 @@ animations = [{
 }]
 
 [node name="Main World" type="Node2D"]
+scale = Vector2(0.976564, 0.951521)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1154.0
+offset_bottom = 655.0
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 16.0
+offset_bottom = 25.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Control"]
 script = ExtResource("5_u0qy3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D"]
 position = Vector2(173, 497)
 shape = SubResource("CircleShape2D_4umlv")
 
-[node name="Floor" type="Sprite2D" parent="Area2D"]
-z_index = -1
-position = Vector2(565, 301)
-scale = Vector2(3.7625, 2.35625)
-texture = ExtResource("3_vhsrf")
-
-[node name="Smith" type="AnimatedSprite2D" parent="Area2D"]
+[node name="Smith" type="AnimatedSprite2D" parent="Control/Area2D"]
 position = Vector2(171, 546)
 sprite_frames = SubResource("SpriteFrames_h275k")
 animation = &"idle"
-frame_progress = 0.942057
+frame_progress = 0.463474
 speed_scale = 2.3
 
-[node name="Camera2D" type="Camera2D" parent="Area2D"]
+[node name="Camera2D" type="Camera2D" parent="Control/Area2D"]
 position = Vector2(571, 340)
 zoom = Vector2(0.9, 0.9)
 
-[node name="exit" type="Button" parent="Area2D"]
+[node name="exit" type="Button" parent="Control/Area2D"]
 offset_left = 983.0
 offset_top = 19.0
 offset_right = 1145.0
 offset_bottom = 71.0
 text = "Leave the game"
+metadata/_edit_use_anchors_ = true
 
-[node name="GoPaint" type="Button" parent="Area2D"]
+[node name="GoPaint" type="Button" parent="Control/Area2D"]
+visible = false
 offset_left = 109.0
 offset_top = 395.0
 offset_right = 200.0
 offset_bottom = 435.0
 text = "Sure dude!"
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Area2D/exit" to="Area2D" method="_on_exit_pressed"]
-[connection signal="pressed" from="Area2D/GoPaint" to="Area2D" method="_on_go_paint_pressed"]
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Nfloor" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(155.648, 521.27)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor2" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(475.135, 521.27)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor3" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(794.623, 521.27)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor4" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(1114.11, 521.27)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor5" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(1114.11, 201.782)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor6" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(794.623, 201.782)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor7" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(475.135, 201.782)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor8" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(155.648, 201.782)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor9" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(160, 1160.5)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor10" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(479.487, 1160.5)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor11" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(798.975, 1160.5)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor12" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(1118.46, 1160.5)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor13" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(1118.46, 841.015)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor14" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(798.975, 841.015)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor15" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(479.487, 841.015)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor16" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(160, 841.015)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor17" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(1425.41, 529.678)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor24" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(1433.6, 210.19)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor25" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(1433.6, 1168.65)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[node name="Nfloor32" type="Sprite2D" parent="Control2"]
+z_index = -1
+position = Vector2(1433.6, 849.166)
+scale = Vector2(1, 1)
+texture = ExtResource("3_wr366")
+
+[connection signal="pressed" from="Control/Area2D/exit" to="Control/Area2D" method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/Area2D/GoPaint" to="Control/Area2D" method="_on_go_paint_pressed"]

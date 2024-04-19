@@ -5,12 +5,12 @@ var settings_file = ConfigFile.new()
 var vsync: int = 0
 
 var audio: Vector3 = Vector3(70.0, 70.0, 70.0)
-
 @onready var main_container = get_node("%MainContainer")
 
 var simultaneous_scene = preload("res://scenes/MainWorld.tscn").instantiate()
 func _ready():
 	$ForgeTrack.play()
+	
 
 func _add_a_scene_manually():
 	# This is like autoloading the scene, only

@@ -3,8 +3,11 @@ extends Area2D
 
 var customer1 = preload("res://scenes/Customer1.tscn")
 var simultaneous_scene = preload("res://scenes/drawing.tscn")
-
+@onready var anim = get_node("Smith")
 var customer = customer1.instantiate()
+
+func _ready():
+	anim.play("idle")
 
 func _on_exit_pressed():
 	get_tree().quit()
@@ -24,3 +27,8 @@ func _on_go_paint_pressed():
 		$Floor.hide()
 		$Smith.hide()
 		global.drawing=true
+
+
+
+
+
