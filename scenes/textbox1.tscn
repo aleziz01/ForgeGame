@@ -5,7 +5,6 @@
 
 [node name="Textbox1" type="RichTextLabel"]
 texture_filter = 1
-anchors_preset = -1
 offset_left = -179.0
 offset_top = -360.0
 offset_right = 524.0

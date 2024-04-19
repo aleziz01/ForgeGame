@@ -246,10 +246,7 @@ script = ExtResource("1_0m3n1")
 position = Vector2(-13, -30)
 scale = Vector2(5.71875, 5.875)
 sprite_frames = SubResource("SpriteFrames_lfxfw")
-animation = &"SmithIdle"
-
-frame_progress = 0.0504471
-
+animation = &"SmithBro"
 speed_scale = 5.09
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
