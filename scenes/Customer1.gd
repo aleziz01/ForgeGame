@@ -61,7 +61,7 @@ func _process(delta):
 				talk()
 			moving:
 				move(delta)
-		
+
 
 	position.y = 500
 	#first customer/ WIZARD
