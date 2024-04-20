@@ -37,6 +37,7 @@ text = "Next Customer!"
 [node name="Panel" type="Panel" parent="next"]
 z_index = -1
 layout_mode = 0
+offset_left = -4.0
 offset_right = 209.0
 offset_bottom = 56.0
 mouse_filter = 2

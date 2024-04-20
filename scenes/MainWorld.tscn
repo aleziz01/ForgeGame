@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://nih7y7tlho4c"]
+[gd_scene load_steps=36 format=3 uid="uid://nih7y7tlho4c"]
 
 [ext_resource type="Script" path="res://scenes/MainWorld.gd" id="1_n2hab"]
 [ext_resource type="Texture2D" uid="uid://dkuflqakndl2v" path="res://art/Nfloor.png" id="3_0etii"]
@@ -166,6 +166,11 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nn13"]
+bg_color = Color(0.0823529, 0.0745098, 0.152941, 1)
+
+[sub_resource type="Theme" id="Theme_dq23h"]
+
 [node name="Main World" type="Node2D"]
 
 [node name="Mainworld" type="Area2D" parent="."]
@@ -226,6 +231,26 @@ z_index = -1
 position = Vector2(-160, 816)
 texture = ExtResource("3_0etii")
 
+[node name="Nfloor26" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
+z_index = -1
+position = Vector2(-480, 816)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor27" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
+z_index = -1
+position = Vector2(-480, 496)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor28" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
+z_index = -1
+position = Vector2(-480, 176)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor29" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
+z_index = -1
+position = Vector2(-480, -144)
+texture = ExtResource("3_0etii")
+
 [node name="Nfloor17" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(160, 816)
@@ -244,6 +269,41 @@ texture = ExtResource("3_0etii")
 [node name="Nfloor20" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(1120, 816)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor21" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
+z_index = -1
+position = Vector2(1440, 816)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor22" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
+z_index = -1
+position = Vector2(1440, 816)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor23" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
+z_index = -1
+position = Vector2(1440, 496)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor24" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
+z_index = -1
+position = Vector2(1440, 176)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor30" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
+z_index = 2
+position = Vector2(1760, 104)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor31" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
+z_index = 2
+position = Vector2(1760, -144)
+texture = ExtResource("3_0etii")
+
+[node name="Nfloor25" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
+z_index = -1
+position = Vector2(1440, -144)
 texture = ExtResource("3_0etii")
 
 [node name="Nfloor10" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
@@ -277,19 +337,19 @@ shape = SubResource("CircleShape2D_4umlv")
 
 [node name="Window" type="Sprite2D" parent="Mainworld"]
 z_index = -1
-position = Vector2(176, 336)
+position = Vector2(152, 336)
 scale = Vector2(4.835, 4.835)
 texture = ExtResource("6_t1qba")
 
 [node name="Window2" type="Sprite2D" parent="Mainworld"]
 z_index = -1
-position = Vector2(1056, 336)
+position = Vector2(1272, 336)
 scale = Vector2(4.835, 4.835)
 texture = ExtResource("6_t1qba")
 
 [node name="Sheild" type="Sprite2D" parent="Mainworld"]
 z_index = -1
-position = Vector2(928, 176)
+position = Vector2(928, 96)
 texture = ExtResource("7_rxqa1")
 
 [node name="Sheild2" type="Sprite2D" parent="Mainworld"]
@@ -299,37 +359,37 @@ texture = ExtResource("7_rxqa1")
 
 [node name="Barrel" type="Sprite2D" parent="Mainworld"]
 z_index = -1
-position = Vector2(920, 480)
+position = Vector2(1136, 448)
 scale = Vector2(1.535, 1.535)
 texture = ExtResource("8_nnx20")
 
 [node name="Barrel2" type="Sprite2D" parent="Mainworld"]
 z_index = -1
-position = Vector2(1064, 376)
+position = Vector2(1272, 376)
 scale = Vector2(1.18417, 1.0175)
 texture = ExtResource("8_nnx20")
 
 [node name="Barrel3" type="Sprite2D" parent="Mainworld"]
 z_index = -1
-position = Vector2(1024, 576)
+position = Vector2(1280, 560)
 scale = Vector2(1.535, 1.535)
 texture = ExtResource("8_nnx20")
 
 [node name="Barrel4" type="Sprite2D" parent="Mainworld"]
 z_index = -1
-position = Vector2(912, 584)
+position = Vector2(1128, 560)
 rotation = -1.57079
 scale = Vector2(1.535, 1.535)
 texture = ExtResource("8_nnx20")
 
 [node name="Door" type="Sprite2D" parent="Mainworld"]
 z_index = 1
-position = Vector2(1120, 424)
+position = Vector2(1520, 424)
 scale = Vector2(1.975, 1.975)
 texture = ExtResource("6_7tskr")
 
 [node name="Smith" type="AnimatedSprite2D" parent="Mainworld"]
-position = Vector2(143.5, 536.5)
+position = Vector2(136, 512)
 scale = Vector2(1.24074, 1.18148)
 sprite_frames = SubResource("SpriteFrames_h275k")
 animation = &"idle"
@@ -341,10 +401,10 @@ position = Vector2(571, 340)
 zoom = Vector2(0.9, 0.9)
 
 [node name="exit" type="Button" parent="Mainworld"]
-offset_left = 1000.0
-offset_top = -176.0
-offset_right = 1169.0
-offset_bottom = -115.0
+offset_left = 816.0
+offset_top = -168.0
+offset_right = 985.0
+offset_bottom = -107.0
 theme_override_fonts/font = ExtResource("4_u47d2")
 theme_override_font_sizes/font_size = 33
 text = "Leave the game"
@@ -358,9 +418,9 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6ryjl")
 
 [node name="GoPaint" type="Button" parent="Mainworld"]
-offset_left = -40.0
+offset_left = -120.0
 offset_top = 304.0
-offset_right = 126.0
+offset_right = 46.0
 offset_bottom = 366.0
 theme_override_fonts/font = ExtResource("4_u47d2")
 theme_override_font_sizes/font_size = 49
@@ -379,7 +439,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_6ryjl")
 position = Vector2(34, 78)
 sprite_frames = SubResource("SpriteFrames_vv63g")
 animation = &"Idle"
-frame_progress = 0.517932
+frame_progress = 0.658524
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -390,6 +450,22 @@ offset_bottom = 40.0
 [node name="ForgeMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_vkhr5")
 autoplay = true
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1600.0
+offset_top = -304.0
+offset_right = 1728.0
+offset_bottom = 976.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2nn13")
+
+[node name="Panel2" type="Panel" parent="."]
+z_index = 1
+offset_left = -640.0
+offset_top = 608.0
+offset_right = 1928.0
+offset_bottom = 976.0
+theme = SubResource("Theme_dq23h")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2nn13")
 
 [connection signal="pressed" from="Mainworld/exit" to="Mainworld" method="_on_exit_pressed"]
 [connection signal="pressed" from="Mainworld/GoPaint" to="Mainworld" method="_on_go_paint_pressed"]

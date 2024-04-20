@@ -332,11 +332,12 @@ size = Vector2(182, 235)
 script = ExtResource("1_0m3n1")
 
 [node name="customer" type="AnimatedSprite2D" parent="."]
-position = Vector2(12, -16)
+position = Vector2(14, 22)
 scale = Vector2(5.429, 5.575)
 sprite_frames = SubResource("SpriteFrames_lfxfw")
-animation = &"Still"
+animation = &"ShuffleLeft"
+frame_progress = 0.279906
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(-1, 3)
 shape = SubResource("RectangleShape2D_o7psx")

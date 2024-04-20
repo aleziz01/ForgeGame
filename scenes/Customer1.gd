@@ -18,6 +18,7 @@ func _ready():
 
 func move(delta):
 	position += dir*speed*delta
+	#if you change this it will change how much he goes
 	if position.x <= StartPos - 900:
 		print("STOP")
 		
@@ -89,5 +90,15 @@ func _process(delta):
 		position=Vector2(5000,5000)
 		
 		#Third customer / FISH MAN???
-		
+
+	if global.spawn == true and global.customercounter==3:
+		CurrentState = moving
+		var anim = $customer
+		anim.play("FishRun")
+	elif global.customercounter==3:
+		CurrentState = idle
+		var anim = $customer
+		anim.play("FishIdle")
+	if global.drawing==true:
+		position=Vector2(5000,5000)
 

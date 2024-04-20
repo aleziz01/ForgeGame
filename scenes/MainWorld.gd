@@ -20,6 +20,7 @@ func _ready():
 	await get_tree().create_timer(1.5).timeout
 	global.spawn = true
 	var customer = customer1.instantiate()
+	#where he spawns
 	customer.position = Vector2(1300,500)
 	add_child(customer)
 	
