@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwwdr7i17cjjg"
-path="res://.godot/imported/FishIdle.png-09eb3e73a3566858ccd6bedd8f668a40.ctex"
+uid="uid://b3fmx26n7igjp"
+path="res://.godot/imported/tile008.png-1361a5c4c9b0159e01002d31367831bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/FishIdle.png"
-dest_files=["res://.godot/imported/FishIdle.png-09eb3e73a3566858ccd6bedd8f668a40.ctex"]
+source_file="res://art/FishIdle/tile008.png"
+dest_files=["res://.godot/imported/tile008.png-1361a5c4c9b0159e01002d31367831bf.ctex"]
 
 [params]
 

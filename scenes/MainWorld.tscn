@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://nih7y7tlho4c"]
+[gd_scene load_steps=34 format=3 uid="uid://nih7y7tlho4c"]
 
 [ext_resource type="Script" path="res://scenes/MainWorld.gd" id="1_n2hab"]
 [ext_resource type="Texture2D" uid="uid://dkuflqakndl2v" path="res://art/Nfloor.png" id="3_0etii"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b0w78pv5k5qho" path="res://art/window.png" id="6_t1qba"]
 [ext_resource type="Texture2D" uid="uid://b3a3h2hwv044w" path="res://art/Sheild.png" id="7_rxqa1"]
 [ext_resource type="Texture2D" uid="uid://br4v4nd73nsfq" path="res://art/barrel.png" id="8_nnx20"]
+[ext_resource type="AudioStream" uid="uid://c38ywebywitqn" path="res://SoundMusic/ForgeMusic.mp3" id="10_vkhr5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4umlv"]
 radius = 139.291
@@ -340,10 +341,10 @@ position = Vector2(571, 340)
 zoom = Vector2(0.9, 0.9)
 
 [node name="exit" type="Button" parent="Mainworld"]
-offset_left = 936.0
-offset_top = 24.0
-offset_right = 1105.0
-offset_bottom = 85.0
+offset_left = 1000.0
+offset_top = -176.0
+offset_right = 1169.0
+offset_bottom = -115.0
 theme_override_fonts/font = ExtResource("4_u47d2")
 theme_override_font_sizes/font_size = 33
 text = "Leave the game"
@@ -378,13 +379,17 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_6ryjl")
 position = Vector2(34, 78)
 sprite_frames = SubResource("SpriteFrames_vv63g")
 animation = &"Idle"
-frame_progress = 0.348848
+frame_progress = 0.517932
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ForgeMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_vkhr5")
+autoplay = true
 
 [connection signal="pressed" from="Mainworld/exit" to="Mainworld" method="_on_exit_pressed"]
 [connection signal="pressed" from="Mainworld/GoPaint" to="Mainworld" method="_on_go_paint_pressed"]

@@ -1,10 +1,19 @@
-[gd_scene load_steps=43 format=3 uid="uid://wsji0x484b2r"]
+[gd_scene load_steps=52 format=3 uid="uid://wsji0x484b2r"]
 
 [ext_resource type="Script" path="res://scenes/Customer1.gd" id="1_0m3n1"]
+[ext_resource type="Texture2D" uid="uid://ckv87e75oqmnv" path="res://art/FishIdle/tile000.png" id="2_0nu5r"]
 [ext_resource type="Texture2D" uid="uid://cigw1h7vaxqcf" path="res://art/MoveLeft.png" id="2_4ii8v"]
 [ext_resource type="Texture2D" uid="uid://doqyrkj330b0c" path="res://art/AnimationSheet_Character.png" id="2_ucnk3"]
+[ext_resource type="Texture2D" uid="uid://70jn6i358n88" path="res://art/FishIdle/tile001.png" id="3_d56m3"]
 [ext_resource type="Texture2D" uid="uid://dv04s1ec8dgd2" path="res://art/FishRun.png" id="3_k47aj"]
 [ext_resource type="Texture2D" uid="uid://c6tabt6jc426p" path="res://art/SmithBro.png" id="4_fsefi"]
+[ext_resource type="Texture2D" uid="uid://crghiu3nxao3s" path="res://art/FishIdle/tile002.png" id="4_hv3y4"]
+[ext_resource type="Texture2D" uid="uid://cv26jdtdv2alr" path="res://art/FishIdle/tile003.png" id="5_rgexx"]
+[ext_resource type="Texture2D" uid="uid://bixs175q3xndb" path="res://art/FishIdle/tile004.png" id="6_50xqe"]
+[ext_resource type="Texture2D" uid="uid://bsaj7m61lpwp5" path="res://art/FishIdle/tile005.png" id="7_cwo6b"]
+[ext_resource type="Texture2D" uid="uid://ctgukfvsmnpwr" path="res://art/FishIdle/tile006.png" id="8_scjcn"]
+[ext_resource type="Texture2D" uid="uid://up3c8ck063dv" path="res://art/FishIdle/tile007.png" id="9_1k5vx"]
+[ext_resource type="Texture2D" uid="uid://b3fmx26n7igjp" path="res://art/FishIdle/tile008.png" id="10_ngfvh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bfnf"]
 atlas = ExtResource("3_k47aj")
@@ -148,7 +157,34 @@ region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lfxfw"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0nu5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d56m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hv3y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rgexx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_50xqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cwo6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_scjcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1k5vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ngfvh")
+}],
 "loop": true,
 "name": &"FishIdle",
 "speed": 8.0
@@ -296,11 +332,10 @@ size = Vector2(182, 235)
 script = ExtResource("1_0m3n1")
 
 [node name="customer" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -9)
+position = Vector2(12, -16)
 scale = Vector2(5.429, 5.575)
 sprite_frames = SubResource("SpriteFrames_lfxfw")
-animation = &"FishIdle"
-frame_progress = 0.368109
+animation = &"Still"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
