@@ -21,11 +21,24 @@ func _ready():
 	global.spawn = true
 	var customer = customer1.instantiate()
 	#where he spawns
-	customer.position = Vector2(1300,500)
+	if  global.customercounter==3:
+		customer.position = Vector2(3000,500)
+	else:
+		customer.position = Vector2(1700,500)
 	add_child(customer)
 	
+	#Door sound Wuzard
+	if  global.customercounter==1:
+		$Wizdoor.play()
+	#Door sound SMITHBRO
+	if  global.customercounter==2:
+		$Smithdoor.play()
+	#door sound FISHMAN
+	if  global.customercounter==3:
+		$Fishdoor.play()
 	
-func _process(delta):
+	
+func _process(_delta):
 	if  get_overlapping_bodies().size()>0:
 		$GoPaint.show()
 	else:
@@ -54,6 +67,29 @@ func _on_go_paint_pressed():
 		$Nfloor18.hide()
 		$Nfloor19.hide()
 		$Nfloor20.hide()
+		$Nfloor21.hide()
+		$Nfloor22.hide()
+		$Nfloor23.hide()
+		$Nfloor24.hide()
+		$Nfloor25.hide()
+		$Nfloor26.hide()
+		$Nfloor27.hide()
+		$Nfloor28.hide()
+		$Nfloor29.hide()
+		$Nfloor30.hide()
+		$Nfloor31.hide()
+		$FloorR.hide()
+		$FloorR2.hide()
+		$FloorR3.hide()
+		$FloorR4.hide()
+		$FloorR5.hide()
+		$FloorR6.hide()
+		$FloorR7.hide()
+		$FloorR8.hide()
+		$FloorR9.hide()
+		$FloorR10.hide()
+		$Panel.hide()
+		$Panel2.hide()
 		$Smith.hide()
 		$Torches.hide()
 		$GoPaint.hide()
@@ -65,6 +101,8 @@ func _on_go_paint_pressed():
 		$Barrel2.hide()
 		$Barrel3.hide()
 		$Barrel4.hide()
+		$Pillar.hide()
+		$Pillar2.hide()
 		$Door.hide()
 		
 

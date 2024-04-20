@@ -18,8 +18,8 @@ zoom = Vector2(0.5, 0.5)
 [node name="ScoreShower" type="RichTextLabel" parent="."]
 offset_left = 175.0
 offset_top = 142.0
-offset_right = 513.0
-offset_bottom = 214.0
+offset_right = 779.0
+offset_bottom = 429.0
 theme_override_fonts/normal_font = ExtResource("2_8xpvo")
 theme_override_font_sizes/normal_font_size = 65
 text = "helloo"

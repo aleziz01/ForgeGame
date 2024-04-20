@@ -256,7 +256,7 @@ func _on_next_pressed():
 	
 	
 
-func _process(delta):
+func _process(_delta):
 	if nextpressed == 0:
 		$Frame.show()
 

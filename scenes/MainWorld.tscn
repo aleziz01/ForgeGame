@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://nih7y7tlho4c"]
+[gd_scene load_steps=41 format=3 uid="uid://nih7y7tlho4c"]
 
 [ext_resource type="Script" path="res://scenes/MainWorld.gd" id="1_n2hab"]
 [ext_resource type="Texture2D" uid="uid://dkuflqakndl2v" path="res://art/Nfloor.png" id="3_0etii"]
@@ -10,6 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://b3a3h2hwv044w" path="res://art/Sheild.png" id="7_rxqa1"]
 [ext_resource type="Texture2D" uid="uid://br4v4nd73nsfq" path="res://art/barrel.png" id="8_nnx20"]
 [ext_resource type="AudioStream" uid="uid://c38ywebywitqn" path="res://SoundMusic/ForgeMusic.mp3" id="10_vkhr5"]
+[ext_resource type="Texture2D" uid="uid://bv0nke00264bo" path="res://art/FloorR.png" id="11_hn2jj"]
+[ext_resource type="AudioStream" uid="uid://d4nhutu4h7btd" path="res://SoundMusic/WizardOpen.mp3" id="12_4h0k3"]
+[ext_resource type="Texture2D" uid="uid://d3kijgykjwklx" path="res://art/Pillar.png" id="12_ovhvj"]
+[ext_resource type="AudioStream" uid="uid://k24u86p437xq" path="res://SoundMusic/SmithDoor.mp3" id="13_g3oa8"]
+[ext_resource type="AudioStream" uid="uid://xhg7qrjdlnev" path="res://SoundMusic/Fishdoor.mp3" id="14_m7t5h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4umlv"]
 radius = 139.291
@@ -113,6 +118,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nn13"]
+bg_color = Color(0.0823529, 0.0745098, 0.152941, 1)
+
+[sub_resource type="Theme" id="Theme_dq23h"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ryjl"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -165,11 +175,6 @@ animations = [{
 "name": &"Idle",
 "speed": 4.0
 }]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nn13"]
-bg_color = Color(0.0823529, 0.0745098, 0.152941, 1)
-
-[sub_resource type="Theme" id="Theme_dq23h"]
 
 [node name="Main World" type="Node2D"]
 
@@ -331,6 +336,66 @@ z_index = -1
 position = Vector2(1120, -144)
 texture = ExtResource("3_0etii")
 
+[node name="FloorR" type="Sprite2D" parent="Mainworld"]
+z_index = 2
+position = Vector2(1792, 744)
+scale = Vector2(0.43, 0.43)
+texture = ExtResource("11_hn2jj")
+
+[node name="FloorR2" type="Sprite2D" parent="Mainworld"]
+z_index = 2
+position = Vector2(1512, 744)
+scale = Vector2(0.43, 0.43)
+texture = ExtResource("11_hn2jj")
+
+[node name="FloorR3" type="Sprite2D" parent="Mainworld"]
+z_index = 2
+position = Vector2(1232, 744)
+scale = Vector2(0.43, 0.42625)
+texture = ExtResource("11_hn2jj")
+
+[node name="FloorR4" type="Sprite2D" parent="Mainworld"]
+z_index = 2
+position = Vector2(952, 744)
+scale = Vector2(0.43, 0.42625)
+texture = ExtResource("11_hn2jj")
+
+[node name="FloorR5" type="Sprite2D" parent="Mainworld"]
+z_index = 2
+position = Vector2(672, 744)
+scale = Vector2(0.43, 0.42625)
+texture = ExtResource("11_hn2jj")
+
+[node name="FloorR6" type="Sprite2D" parent="Mainworld"]
+z_index = 2
+position = Vector2(392, 744)
+scale = Vector2(0.43, 0.42625)
+texture = ExtResource("11_hn2jj")
+
+[node name="FloorR7" type="Sprite2D" parent="Mainworld"]
+z_index = 2
+position = Vector2(112, 744)
+scale = Vector2(0.43, 0.42625)
+texture = ExtResource("11_hn2jj")
+
+[node name="FloorR8" type="Sprite2D" parent="Mainworld"]
+z_index = 2
+position = Vector2(-168, 744)
+scale = Vector2(0.43, 0.42625)
+texture = ExtResource("11_hn2jj")
+
+[node name="FloorR9" type="Sprite2D" parent="Mainworld"]
+z_index = 2
+position = Vector2(-448, 744)
+scale = Vector2(0.43, 0.42625)
+texture = ExtResource("11_hn2jj")
+
+[node name="FloorR10" type="Sprite2D" parent="Mainworld"]
+z_index = 2
+position = Vector2(-728, 744)
+scale = Vector2(0.43, 0.42625)
+texture = ExtResource("11_hn2jj")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mainworld"]
 position = Vector2(173, 497)
 shape = SubResource("CircleShape2D_4umlv")
@@ -396,6 +461,36 @@ animation = &"idle"
 frame_progress = 0.942057
 speed_scale = 2.3
 
+[node name="Pillar" type="Sprite2D" parent="Mainworld"]
+z_index = 2
+position = Vector2(1512, -232)
+scale = Vector2(2.15, 2.15)
+texture = ExtResource("12_ovhvj")
+
+[node name="Pillar2" type="Sprite2D" parent="Mainworld"]
+z_index = 2
+position = Vector2(-378, -235)
+rotation = 3.14159
+scale = Vector2(2.15, -2.15)
+texture = ExtResource("12_ovhvj")
+
+[node name="Panel" type="Panel" parent="Mainworld"]
+z_index = 1
+offset_left = 1600.0
+offset_top = -304.0
+offset_right = 1728.0
+offset_bottom = 976.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2nn13")
+
+[node name="Panel2" type="Panel" parent="Mainworld"]
+z_index = 1
+offset_left = -640.0
+offset_top = 608.0
+offset_right = 1928.0
+offset_bottom = 976.0
+theme = SubResource("Theme_dq23h")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2nn13")
+
 [node name="Camera2D" type="Camera2D" parent="Mainworld"]
 position = Vector2(571, 340)
 zoom = Vector2(0.9, 0.9)
@@ -441,6 +536,15 @@ sprite_frames = SubResource("SpriteFrames_vv63g")
 animation = &"Idle"
 frame_progress = 0.658524
 
+[node name="Wizdoor" type="AudioStreamPlayer2D" parent="Mainworld"]
+stream = ExtResource("12_4h0k3")
+
+[node name="Smithdoor" type="AudioStreamPlayer2D" parent="Mainworld"]
+stream = ExtResource("13_g3oa8")
+
+[node name="Fishdoor" type="AudioStreamPlayer2D" parent="Mainworld"]
+stream = ExtResource("14_m7t5h")
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -450,22 +554,6 @@ offset_bottom = 40.0
 [node name="ForgeMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_vkhr5")
 autoplay = true
-
-[node name="Panel" type="Panel" parent="."]
-offset_left = 1600.0
-offset_top = -304.0
-offset_right = 1728.0
-offset_bottom = 976.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_2nn13")
-
-[node name="Panel2" type="Panel" parent="."]
-z_index = 1
-offset_left = -640.0
-offset_top = 608.0
-offset_right = 1928.0
-offset_bottom = 976.0
-theme = SubResource("Theme_dq23h")
-theme_override_styles/panel = SubResource("StyleBoxFlat_2nn13")
 
 [connection signal="pressed" from="Mainworld/exit" to="Mainworld" method="_on_exit_pressed"]
 [connection signal="pressed" from="Mainworld/GoPaint" to="Mainworld" method="_on_go_paint_pressed"]

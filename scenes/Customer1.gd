@@ -19,11 +19,16 @@ func _ready():
 func move(delta):
 	position += dir*speed*delta
 	#if you change this it will change how much he goes
-	if position.x <= StartPos - 900:
-		print("STOP")
+	if  global.customercounter==3:
+		if position.x <= StartPos - 2600:
 		
-		global.idle = true
-		global.spawn = false
+			global.idle = true
+			global.spawn = false
+	else:
+		if position.x <= StartPos - 1300:
+		
+			global.idle = true
+			global.spawn = false
 func talk():
 	var textbox=textbox1.instantiate()
 	if(global.idle==true):
@@ -47,7 +52,7 @@ func talk():
 			global.wantedcoloramounthandle=0
 			global.wantedsharpnesshandle=1
 		if(global.customercounter==3): #rival blacksmith guy
-			textbox.text="Hmph, hmph, hmph, a fellow blacksmith i see! Let's see what you've got. Give me a sword which has a sharp handle with a diamond at its base, a hilt decorated with blue and a blade tainted by blood"
+			textbox.text="you must be asking yourself? Why have I grown so large? Why am I *inside* your floor? Well, I have no time for this sillyness make me a blunt grey shovel so I can dig myself out of this situation"
 			global.wantedcolorhilt=Color(0,0,1) #green
 			global.wantedcolorhandle=Color(0.129, 0.855, 0.922) #light blue
 			global.wantedcolorblade=Color(1,0,0) #red
