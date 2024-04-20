@@ -151,7 +151,8 @@ texture_filter = 2
 position = Vector2(421, 257)
 scale = Vector2(1.6125, 1.4)
 sprite_frames = SubResource("SpriteFrames_iia6m")
-frame_progress = 0.530559
+frame = 1
+frame_progress = 0.158564
 speed_scale = 1.735
 script = ExtResource("5_24t63")
 

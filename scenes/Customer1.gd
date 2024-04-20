@@ -80,11 +80,24 @@ func _process(delta):
 	if global.spawn == true and global.customercounter==2:
 		CurrentState = moving
 		var anim = $customer
-		anim.play("SmithIdle")
+		anim.play("SmithBro")
 	elif global.customercounter==2:
 		CurrentState = idle
 		var anim = $customer
 		anim.play("SmithIdle")
+	if global.drawing==true:
+		position=Vector2(5000,5000)
+		
+		#Third customer / FISH MAN???
+		
+	if global.spawn == true and global.customercounter==3:
+		CurrentState = moving
+		var anim = $customer
+		anim.play("FishRun")
+	elif global.customercounter==2:
+		CurrentState = idle
+		var anim = $customer
+		anim.play("FishRun")
 	if global.drawing==true:
 		position=Vector2(5000,5000)
 

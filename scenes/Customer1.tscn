@@ -1,9 +1,34 @@
-[gd_scene load_steps=36 format=3 uid="uid://wsji0x484b2r"]
+[gd_scene load_steps=43 format=3 uid="uid://wsji0x484b2r"]
 
 [ext_resource type="Script" path="res://scenes/Customer1.gd" id="1_0m3n1"]
 [ext_resource type="Texture2D" uid="uid://cigw1h7vaxqcf" path="res://art/MoveLeft.png" id="2_4ii8v"]
 [ext_resource type="Texture2D" uid="uid://doqyrkj330b0c" path="res://art/AnimationSheet_Character.png" id="2_ucnk3"]
+[ext_resource type="Texture2D" uid="uid://dv04s1ec8dgd2" path="res://art/FishRun.png" id="3_k47aj"]
 [ext_resource type="Texture2D" uid="uid://c6tabt6jc426p" path="res://art/SmithBro.png" id="4_fsefi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bfnf"]
+atlas = ExtResource("3_k47aj")
+region = Rect2(0, 0, 36, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryjvq"]
+atlas = ExtResource("3_k47aj")
+region = Rect2(72, 0, 36, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfjts"]
+atlas = ExtResource("3_k47aj")
+region = Rect2(144, 0, 36, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy0mr"]
+atlas = ExtResource("3_k47aj")
+region = Rect2(216, 0, 36, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scgs7"]
+atlas = ExtResource("3_k47aj")
+region = Rect2(288, 0, 36, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bur34"]
+atlas = ExtResource("3_k47aj")
+region = Rect2(360, 0, 36, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5qmpf"]
 atlas = ExtResource("2_ucnk3")
@@ -123,6 +148,34 @@ region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lfxfw"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"FishIdle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bfnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryjvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfjts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy0mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scgs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bur34")
+}],
+"loop": true,
+"name": &"FishRun",
+"speed": 9.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5qmpf")
@@ -155,7 +208,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"ShuffleLeft",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -184,7 +237,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"SmithBro",
-"speed": 1.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -243,12 +296,12 @@ size = Vector2(182, 235)
 script = ExtResource("1_0m3n1")
 
 [node name="customer" type="AnimatedSprite2D" parent="."]
-position = Vector2(-13, -30)
-scale = Vector2(5.71875, 5.875)
+position = Vector2(2, -9)
+scale = Vector2(5.429, 5.575)
 sprite_frames = SubResource("SpriteFrames_lfxfw")
-animation = &"SmithBro"
-speed_scale = 5.09
+animation = &"FishIdle"
+frame_progress = 0.368109
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -0.5)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_o7psx")

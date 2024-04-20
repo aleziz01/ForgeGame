@@ -1,12 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://nih7y7tlho4c"]
+[gd_scene load_steps=33 format=3 uid="uid://nih7y7tlho4c"]
 
 [ext_resource type="Script" path="res://scenes/MainWorld.gd" id="1_n2hab"]
 [ext_resource type="Texture2D" uid="uid://dkuflqakndl2v" path="res://art/Nfloor.png" id="3_0etii"]
 [ext_resource type="Texture2D" uid="uid://d1yvicxplk6p4" path="res://art/ourman.png" id="3_3643l"]
 [ext_resource type="FontFile" uid="uid://dkb0ypwwpduer" path="res://Fonts/giga-forge.otf" id="4_u47d2"]
+[ext_resource type="Texture2D" uid="uid://cwd7p63f2nvmy" path="res://art/Torch.png" id="5_prtkq"]
+[ext_resource type="Texture2D" uid="uid://620ernl114hy" path="res://art/door.png" id="6_7tskr"]
+[ext_resource type="Texture2D" uid="uid://b0w78pv5k5qho" path="res://art/window.png" id="6_t1qba"]
+[ext_resource type="Texture2D" uid="uid://b3a3h2hwv044w" path="res://art/Sheild.png" id="7_rxqa1"]
+[ext_resource type="Texture2D" uid="uid://br4v4nd73nsfq" path="res://art/barrel.png" id="8_nnx20"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4umlv"]
-radius = 447.0
+radius = 139.291
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7pgp"]
 atlas = ExtResource("3_3643l")
@@ -107,107 +112,160 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ryjl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l05x1"]
+atlas = ExtResource("5_prtkq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tidc5"]
+atlas = ExtResource("5_prtkq")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2c4r"]
+atlas = ExtResource("5_prtkq")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yubd5"]
+atlas = ExtResource("5_prtkq")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qocp0"]
+atlas = ExtResource("5_prtkq")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqoun"]
+atlas = ExtResource("5_prtkq")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vv63g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l05x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tidc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2c4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yubd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qocp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqoun")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}]
+
 [node name="Main World" type="Node2D"]
 
 [node name="Mainworld" type="Area2D" parent="."]
 script = ExtResource("1_n2hab")
 
-[node name="Nfloor" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(160, 496)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor2" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor2" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(480, 496)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor3" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor3" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(800, 496)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor4" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor4" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(1120, 496)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor5" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor5" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(1120, 176)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor6" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor6" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(800, 176)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor7" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor7" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(480, 176)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor8" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor8" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(160, 176)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor9" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor9" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(-160, 176)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor12" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor12" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(-160, 496)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor16" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor16" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(-160, 816)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor17" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor17" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(160, 816)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor18" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor18" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(480, 816)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor19" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor19" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(800, 816)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor20" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor20" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(1120, 816)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor10" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor10" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(-160, -144)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor11" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor11" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(160, -144)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor13" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor13" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(480, -144)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor14" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor14" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(800, -144)
 texture = ExtResource("3_0etii")
 
-[node name="Nfloor15" type="Sprite2D" parent="Mainworld"]
+[node name="Nfloor15" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = -1
 position = Vector2(1120, -144)
 texture = ExtResource("3_0etii")
@@ -216,8 +274,62 @@ texture = ExtResource("3_0etii")
 position = Vector2(173, 497)
 shape = SubResource("CircleShape2D_4umlv")
 
+[node name="Window" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(176, 336)
+scale = Vector2(4.835, 4.835)
+texture = ExtResource("6_t1qba")
+
+[node name="Window2" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(1056, 336)
+scale = Vector2(4.835, 4.835)
+texture = ExtResource("6_t1qba")
+
+[node name="Sheild" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(928, 176)
+texture = ExtResource("7_rxqa1")
+
+[node name="Sheild2" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(928, 344)
+texture = ExtResource("7_rxqa1")
+
+[node name="Barrel" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(920, 480)
+scale = Vector2(1.535, 1.535)
+texture = ExtResource("8_nnx20")
+
+[node name="Barrel2" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(1064, 376)
+scale = Vector2(1.18417, 1.0175)
+texture = ExtResource("8_nnx20")
+
+[node name="Barrel3" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(1024, 576)
+scale = Vector2(1.535, 1.535)
+texture = ExtResource("8_nnx20")
+
+[node name="Barrel4" type="Sprite2D" parent="Mainworld"]
+z_index = -1
+position = Vector2(912, 584)
+rotation = -1.57079
+scale = Vector2(1.535, 1.535)
+texture = ExtResource("8_nnx20")
+
+[node name="Door" type="Sprite2D" parent="Mainworld"]
+z_index = 1
+position = Vector2(1120, 424)
+scale = Vector2(1.975, 1.975)
+texture = ExtResource("6_7tskr")
+
 [node name="Smith" type="AnimatedSprite2D" parent="Mainworld"]
-position = Vector2(176, 512)
+position = Vector2(143.5, 536.5)
+scale = Vector2(1.24074, 1.18148)
 sprite_frames = SubResource("SpriteFrames_h275k")
 animation = &"idle"
 frame_progress = 0.942057
@@ -228,20 +340,45 @@ position = Vector2(571, 340)
 zoom = Vector2(0.9, 0.9)
 
 [node name="exit" type="Button" parent="Mainworld"]
-offset_left = 983.0
-offset_top = 19.0
-offset_right = 1145.0
-offset_bottom = 71.0
+offset_left = 936.0
+offset_top = 24.0
+offset_right = 1105.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("4_u47d2")
+theme_override_font_sizes/font_size = 33
 text = "Leave the game"
 
+[node name="Panel" type="Panel" parent="Mainworld/exit"]
+z_index = -1
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 64.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ryjl")
+
 [node name="GoPaint" type="Button" parent="Mainworld"]
+offset_left = -40.0
 offset_top = 304.0
-offset_right = 166.0
-offset_bottom = 344.0
+offset_right = 126.0
+offset_bottom = 366.0
 theme_override_fonts/font = ExtResource("4_u47d2")
 theme_override_font_sizes/font_size = 49
-text = "Sure dude!"
+text = "I shall"
 icon_alignment = 1
+
+[node name="Panel" type="Panel" parent="Mainworld/GoPaint"]
+z_index = -1
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 64.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ryjl")
+
+[node name="Torches" type="AnimatedSprite2D" parent="Mainworld"]
+position = Vector2(34, 78)
+sprite_frames = SubResource("SpriteFrames_vv63g")
+animation = &"Idle"
+frame_progress = 0.348848
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
