@@ -8,7 +8,7 @@ func _ready():
 		if global.totalscore>150:
 			$ScoreShower.text = "the total score is "+str(global.totalscore)+"/300, you get to live another day!"
 		else:
-			$ScoreShower.text = "the total score is "+str(global.totalscore)+"/300, your execution is tommorow at 5PM, see you there!"
+			$ScoreShower.text = "the total score is "+str(global.totalscore)+"/300, your customers were not pleased with their service, you quickly became deppressed due to your lack of skill and jumped into a large hole that you found near your house, you were never seen again."
 		$next.hide()
 	else:
 		$ScoreShower.text = "your score is "+str(recentscore)

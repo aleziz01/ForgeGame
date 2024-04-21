@@ -555,7 +555,7 @@ volume_db = 5.622
 
 [node name="FishSound" type="AudioStreamPlayer" parent="Mainworld"]
 stream = ExtResource("16_lg5tk")
-volume_db = 17.803
+volume_db = 18.0
 
 [node name="Fishdoor" type="AudioStreamPlayer2D" parent="Mainworld"]
 stream = ExtResource("14_m7t5h")
