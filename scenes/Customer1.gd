@@ -44,7 +44,7 @@ func talk():
 			global.wantedcoloramounthandle=-1 #-1 is none 0 is not specified(>1 pixel) 1 is a bit 2 is some 3 is a good amount 4 is a lot
 			global.wantedsharpnesshandle=1 #0 is none 1 is sharp 2 is dull
 		if(global.customercounter==2): #fridge guy
-			textbox.text="I hear your blacksmithery aint too bad. I too hail from the blacksmithian race, show me the best you can do I want a sword as sharp my fathers backpain, as deadly as his belt, and  "
+			textbox.text="I hear your blacksmithery aint too bad. I too hail from the blacksmithian race, show me the best you can do I want a sword as sharp my fathers backpain, and as deadly as his belt. Make sure it includes blue on the handle and gray on the hilt. "
 			global.wantedcolorhilt=Color(0.85,0,0) 
 			global.wantedcolorhandle=Color(0,0,1) #blue
 			global.wantedcolorblade=Color(0.5,0.5,0.5) #gray 
@@ -53,7 +53,7 @@ func talk():
 			global.wantedcoloramounthandle=0
 			global.wantedsharpnesshandle=1
 		if(global.customercounter==3): #rival blacksmith guy
-			textbox.text="you must be asking yourself? Why have I grown so large? Why am I *inside* your floor? Well, I have no time for these silly questions make me a blunt GRAY sword so I can dig myself out of this situation"
+			textbox.text="you must be asking yourself? Why have I grown so large? Why am I *inside* your floor? Well, I have no time for these silly questions make me a blunt GRAY sword so I can dig myself out of this situation."
 			global.wantedcolorhilt=Color(0.5,0.5,0.5) #grey
 			global.wantedcolorhandle=Color(0.5,0.5,0.5) #grey
 			global.wantedcolorblade=Color(0.5,0.5,0.5) #grey
