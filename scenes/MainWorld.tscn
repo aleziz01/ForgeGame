@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://nih7y7tlho4c"]
+[gd_scene load_steps=44 format=3 uid="uid://nih7y7tlho4c"]
 
 [ext_resource type="Script" path="res://scenes/MainWorld.gd" id="1_n2hab"]
 [ext_resource type="Texture2D" uid="uid://dkuflqakndl2v" path="res://art/Nfloor.png" id="3_0etii"]
@@ -15,6 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://d3kijgykjwklx" path="res://art/Pillar.png" id="12_ovhvj"]
 [ext_resource type="AudioStream" uid="uid://k24u86p437xq" path="res://SoundMusic/SmithDoor.mp3" id="13_g3oa8"]
 [ext_resource type="AudioStream" uid="uid://xhg7qrjdlnev" path="res://SoundMusic/Fishdoor.mp3" id="14_m7t5h"]
+[ext_resource type="AudioStream" uid="uid://d166byugluanl" path="res://SoundMusic/WizardSound.mp3" id="14_vep7w"]
+[ext_resource type="AudioStream" uid="uid://b2xg67nteobnv" path="res://SoundMusic/SmithSound.mp3" id="15_ampab"]
+[ext_resource type="AudioStream" uid="uid://c5m8x8jg1svpu" path="res://SoundMusic/FishSound.mp3" id="16_lg5tk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4umlv"]
 radius = 139.291
@@ -496,10 +499,10 @@ position = Vector2(571, 340)
 zoom = Vector2(0.9, 0.9)
 
 [node name="exit" type="Button" parent="Mainworld"]
-offset_left = 816.0
-offset_top = -168.0
-offset_right = 985.0
-offset_bottom = -107.0
+offset_left = 1096.0
+offset_top = -256.0
+offset_right = 1265.0
+offset_bottom = -195.0
 theme_override_fonts/font = ExtResource("4_u47d2")
 theme_override_font_sizes/font_size = 33
 text = "Leave the game"
@@ -541,6 +544,18 @@ stream = ExtResource("12_4h0k3")
 
 [node name="Smithdoor" type="AudioStreamPlayer2D" parent="Mainworld"]
 stream = ExtResource("13_g3oa8")
+
+[node name="WizardSound" type="AudioStreamPlayer" parent="Mainworld"]
+stream = ExtResource("14_vep7w")
+volume_db = 5.622
+
+[node name="SmithSound" type="AudioStreamPlayer" parent="Mainworld"]
+stream = ExtResource("15_ampab")
+volume_db = 5.622
+
+[node name="FishSound" type="AudioStreamPlayer" parent="Mainworld"]
+stream = ExtResource("16_lg5tk")
+volume_db = 17.803
 
 [node name="Fishdoor" type="AudioStreamPlayer2D" parent="Mainworld"]
 stream = ExtResource("14_m7t5h")

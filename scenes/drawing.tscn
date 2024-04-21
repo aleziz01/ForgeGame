@@ -49,6 +49,33 @@ bg_color = Color(0.294118, 0.705882, 1, 1)
 [node name="drawing" type="Node2D"]
 script = ExtResource("1_coakd")
 
+[node name="DrawHandel" type="RichTextLabel" parent="."]
+offset_left = 240.0
+offset_top = 680.0
+offset_right = 624.0
+offset_bottom = 776.0
+theme_override_fonts/normal_font = ExtResource("2_uix3s")
+theme_override_font_sizes/normal_font_size = 70
+text = "DRAW A HANDLE "
+
+[node name="DrawHilt" type="RichTextLabel" parent="."]
+offset_left = 144.0
+offset_top = 416.0
+offset_right = 424.0
+offset_bottom = 472.0
+theme_override_fonts/normal_font = ExtResource("2_uix3s")
+theme_override_font_sizes/normal_font_size = 70
+text = "DRAW A HILT"
+
+[node name="DrawBlade" type="RichTextLabel" parent="."]
+offset_left = 184.0
+offset_top = 72.0
+offset_right = 472.0
+offset_bottom = 152.0
+theme_override_fonts/normal_font = ExtResource("2_uix3s")
+theme_override_font_sizes/normal_font_size = 70
+text = "DRAW A BLADE"
+
 [node name="exit_button" type="Button" parent="."]
 offset_left = 1152.0
 offset_top = 488.0

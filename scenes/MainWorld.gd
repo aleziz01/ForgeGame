@@ -5,10 +5,26 @@ var customer1 = preload("res://scenes/Customer1.tscn")
 var simultaneous_scene = preload("res://scenes/drawing.tscn")
 
 var customer = customer1.instantiate()
+var Sound = true
 
 func _on_exit_pressed():
 	get_tree().quit()
-
+func sound():
+		# Wuzard sound
+		if global.idle == true and global.customercounter == 1 and Sound == true:
+			$WizardSound.play()
+			print("PLAY")
+			Sound = false
+			#Smith Sound 
+		if global.idle == true and global.customercounter == 2 and Sound == true:
+			$SmithSound.play()
+			print("PLAY")
+			Sound = false
+			#Fish Sound
+		if global.idle == true and global.customercounter == 3 and Sound == true:
+			$FishSound.play()
+			print("PLAY")
+			Sound = false
 #spawning guys
 func _ready():
 	$GoPaint.hide()
@@ -37,12 +53,17 @@ func _ready():
 	if  global.customercounter==3:
 		$Fishdoor.play()
 	
-	
+
+		
 func _process(_delta):
 	if  get_overlapping_bodies().size()>0:
 		$GoPaint.show()
 	else:
 		$GoPaint.hide()
+		
+	if global.idle == true:
+		sound()
+
 
 func _on_go_paint_pressed():
 	if get_overlapping_bodies().size()>0 and global.drawing==false and global.idle == true:

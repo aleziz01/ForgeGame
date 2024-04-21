@@ -259,21 +259,26 @@ func _on_next_pressed():
 func _process(_delta):
 	if nextpressed == 0:
 		$Frame.show()
+		$DrawHandel.show()
 
 	else:
 		$Frame.hide() 
+		$DrawHandel.hide()
 
 	if nextpressed == 1:
 		$Frame2.show()
+		$DrawHilt.show()
 
 	else:
 		$Frame2.hide()
+		$DrawHilt.hide()
 
 	if nextpressed == 2:
 		$Frame3.show()
+		$DrawBlade.show()
 	else:
 		$Frame3.hide()
- 
+		$DrawBlade.hide()
 
 # Drawing function
 func _draw():
