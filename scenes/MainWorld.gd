@@ -31,6 +31,8 @@ func _ready():
 	#animation
 	var anim = $Smith
 	var torch = $Torches
+	var torchs = $Torches2
+	torchs.play("Idle")
 	torch.play("Idle")
 	anim.play("idle")
 	await get_tree().create_timer(1.5).timeout
@@ -113,6 +115,7 @@ func _on_go_paint_pressed():
 		$Panel2.hide()
 		$Smith.hide()
 		$Torches.hide()
+		$Torches2.hide()
 		$GoPaint.hide()
 		$Window.hide()
 		$Window2.hide()

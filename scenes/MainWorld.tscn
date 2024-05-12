@@ -301,12 +301,14 @@ texture = ExtResource("3_0etii")
 
 [node name="Nfloor30" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = 2
-position = Vector2(1760, 104)
+position = Vector2(1744, 104)
+scale = Vector2(1.1, 1)
 texture = ExtResource("3_0etii")
 
 [node name="Nfloor31" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
 z_index = 2
-position = Vector2(1760, -144)
+position = Vector2(1744, -144)
+scale = Vector2(1.1, 1)
 texture = ExtResource("3_0etii")
 
 [node name="Nfloor25" type="Sprite2D" parent="Mainworld" groups=["Floor"]]
@@ -452,11 +454,12 @@ texture = ExtResource("8_nnx20")
 
 [node name="Door" type="Sprite2D" parent="Mainworld"]
 z_index = 1
-position = Vector2(1520, 424)
+position = Vector2(1480, 424)
 scale = Vector2(1.975, 1.975)
 texture = ExtResource("6_7tskr")
 
 [node name="Smith" type="AnimatedSprite2D" parent="Mainworld"]
+z_index = 1
 position = Vector2(136, 512)
 scale = Vector2(1.24074, 1.18148)
 sprite_frames = SubResource("SpriteFrames_h275k")
@@ -479,10 +482,10 @@ texture = ExtResource("12_ovhvj")
 
 [node name="Panel" type="Panel" parent="Mainworld"]
 z_index = 1
-offset_left = 1600.0
-offset_top = -304.0
-offset_right = 1728.0
-offset_bottom = 976.0
+offset_left = 1568.0
+offset_top = -296.0
+offset_right = 1696.0
+offset_bottom = 984.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2nn13")
 
 [node name="Panel2" type="Panel" parent="Mainworld"]
@@ -497,23 +500,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2nn13")
 [node name="Camera2D" type="Camera2D" parent="Mainworld"]
 position = Vector2(571, 340)
 zoom = Vector2(0.9, 0.9)
-
-[node name="exit" type="Button" parent="Mainworld"]
-offset_left = 1096.0
-offset_top = -256.0
-offset_right = 1265.0
-offset_bottom = -195.0
-theme_override_fonts/font = ExtResource("4_u47d2")
-theme_override_font_sizes/font_size = 33
-text = "Leave the game"
-
-[node name="Panel" type="Panel" parent="Mainworld/exit"]
-z_index = -1
-layout_mode = 0
-offset_right = 168.0
-offset_bottom = 64.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_6ryjl")
 
 [node name="GoPaint" type="Button" parent="Mainworld"]
 offset_left = -120.0
@@ -535,6 +521,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_6ryjl")
 
 [node name="Torches" type="AnimatedSprite2D" parent="Mainworld"]
 position = Vector2(34, 78)
+sprite_frames = SubResource("SpriteFrames_vv63g")
+animation = &"Idle"
+frame_progress = 0.658524
+
+[node name="Torches2" type="AnimatedSprite2D" parent="Mainworld"]
+position = Vector2(1104, 80)
 sprite_frames = SubResource("SpriteFrames_vv63g")
 animation = &"Idle"
 frame_progress = 0.658524
@@ -570,5 +562,4 @@ offset_bottom = 40.0
 stream = ExtResource("10_vkhr5")
 autoplay = true
 
-[connection signal="pressed" from="Mainworld/exit" to="Mainworld" method="_on_exit_pressed"]
 [connection signal="pressed" from="Mainworld/GoPaint" to="Mainworld" method="_on_go_paint_pressed"]
