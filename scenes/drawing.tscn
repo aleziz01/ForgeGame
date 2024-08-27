@@ -1,106 +1,275 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2slvb1b0fury"]
+[gd_scene load_steps=25 format=3 uid="uid://d2slvb1b0fury"]
 
 [ext_resource type="Script" path="res://scenes/drawing.gd" id="1_coakd"]
 [ext_resource type="Texture2D" uid="uid://dlbtlb2wkwr8p" path="res://art/canvas.png" id="2_6dspc"]
+[ext_resource type="FontFile" uid="uid://dkb0ypwwpduer" path="res://Fonts/giga-forge.otf" id="2_uix3s"]
 [ext_resource type="Texture2D" uid="uid://cvilxjfn3vfar" path="res://art/Frame.png" id="3_dgaah"]
 [ext_resource type="Texture2D" uid="uid://dvwj0887x0wd7" path="res://art/Frame2.png" id="4_vnn8o"]
 [ext_resource type="Texture2D" uid="uid://csnp8bk7q3xri" path="res://art/Frame3.png" id="5_4fqmk"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p2mf2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l58vl"]
+bg_color = Color(0.380392, 0.211765, 0.0784314, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ctf3w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uxo5"]
+bg_color = Color(0.698039, 0.835294, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_umqrk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ocxmu"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0cll"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yev35"]
+bg_color = Color(0.0392157, 0.0313726, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5jcu7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlgjh"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvll4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lpux"]
+bg_color = Color(0.933333, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lo3pg"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wq162"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c287h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4p3ug"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1s81o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jn8i"]
+bg_color = Color(0.294118, 0.705882, 1, 1)
+
 [node name="drawing" type="Node2D"]
 script = ExtResource("1_coakd")
 
-[node name="exit_button" type="Button" parent="."]
-offset_left = 1156.0
-offset_top = 534.0
-offset_right = 1259.0
-offset_bottom = 586.0
-text = "exit"
+[node name="DrawHandel" type="RichTextLabel" parent="."]
+offset_left = 240.0
+offset_top = 680.0
+offset_right = 624.0
+offset_bottom = 776.0
+theme_override_fonts/normal_font = ExtResource("2_uix3s")
+theme_override_font_sizes/normal_font_size = 70
+text = "DRAW A HANDLE "
+
+[node name="DrawHilt" type="RichTextLabel" parent="."]
+offset_left = 144.0
+offset_top = 416.0
+offset_right = 424.0
+offset_bottom = 472.0
+theme_override_fonts/normal_font = ExtResource("2_uix3s")
+theme_override_font_sizes/normal_font_size = 70
+text = "DRAW A HILT"
+
+[node name="DrawBlade" type="RichTextLabel" parent="."]
+offset_left = 184.0
+offset_top = 72.0
+offset_right = 472.0
+offset_bottom = 152.0
+theme_override_fonts/normal_font = ExtResource("2_uix3s")
+theme_override_font_sizes/normal_font_size = 70
+text = "DRAW A BLADE"
 
 [node name="brown" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+texture_filter = 1
+offset_right = 96.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_uix3s")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p2mf2")
 text = "brown"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="brown"]
+z_index = -1
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 48.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l58vl")
+metadata/_edit_use_anchors_ = true
 
 [node name="yellow" type="Button" parent="."]
-offset_left = 1156.0
-offset_top = 373.0
-offset_right = 1258.0
-offset_bottom = 436.0
+offset_left = 1152.0
+offset_top = 336.0
+offset_right = 1272.0
+offset_bottom = 392.0
+theme_override_fonts/font = ExtResource("2_uix3s")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ctf3w")
 text = "yellow"
 
+[node name="Panel" type="Panel" parent="yellow"]
+z_index = -1
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1uxo5")
+
 [node name="black" type="Button" parent="."]
-offset_left = 1153.0
-offset_top = 303.0
-offset_right = 1262.0
-offset_bottom = 358.0
+offset_left = 1152.0
+offset_top = 272.0
+offset_right = 1271.0
+offset_bottom = 329.0
+theme_override_fonts/font = ExtResource("2_uix3s")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxEmpty_umqrk")
 text = "black"
 
+[node name="Panel" type="Panel" parent="black"]
+z_index = -1
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ocxmu")
+
 [node name="blue" type="Button" parent="."]
-offset_left = 1158.0
-offset_top = 228.0
-offset_right = 1273.0
-offset_bottom = 289.0
+offset_left = 1152.0
+offset_top = 200.0
+offset_right = 1272.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("2_uix3s")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v0cll")
 text = "blue"
+
+[node name="Panel" type="Panel" parent="blue"]
+z_index = -1
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yev35")
 
 [node name="green" type="Button" parent="."]
 offset_left = 1152.0
-offset_top = 158.0
-offset_right = 1273.0
-offset_bottom = 217.0
+offset_top = 136.0
+offset_right = 1272.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("2_uix3s")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jcu7")
 text = "green"
+
+[node name="Panel" type="Panel" parent="green"]
+z_index = -1
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hlgjh")
 
 [node name="red" type="Button" parent="."]
 offset_left = 1152.0
 offset_top = 67.0
-offset_right = 1275.0
-offset_bottom = 138.0
+offset_right = 1272.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("2_uix3s")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dvll4")
 text = "red"
 
+[node name="Panel" type="Panel" parent="red"]
+z_index = -1
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 61.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0lpux")
+
 [node name="eraser(turns stuff white)" type="Button" parent="."]
-offset_left = 1157.0
-offset_top = 457.0
-offset_right = 1263.0
-offset_bottom = 526.0
+offset_left = 1152.0
+offset_top = 408.0
+offset_right = 1272.0
+offset_bottom = 477.0
+theme_override_fonts/font = ExtResource("2_uix3s")
+theme_override_font_sizes/font_size = 33
 text = "eraser"
 
 [node name="Clear" type="Button" parent="."]
-offset_left = 1155.0
-offset_top = -25.0
-offset_right = 1278.0
-offset_bottom = 44.0
+offset_left = 1152.0
+offset_right = 1272.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_uix3s")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_lo3pg")
 text = "clear"
 
 [node name="gray" type="Button" parent="."]
-offset_left = 1069.0
-offset_top = -125.0
-offset_right = 1134.0
-offset_bottom = -86.0
+offset_top = 56.0
+offset_right = 96.0
+offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("2_uix3s")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wq162")
 text = "gray"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="gray"]
+z_index = -1
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 48.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c287h")
+metadata/_edit_use_anchors_ = true
 
 [node name="next" type="Button" parent="."]
-offset_left = 1148.0
-offset_top = -146.0
-offset_right = 1292.0
-offset_bottom = -46.0
+offset_left = 1152.0
+offset_top = -144.0
+offset_right = 1296.0
+offset_bottom = -44.0
+theme_override_fonts/font = ExtResource("2_uix3s")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_4p3ug")
 text = "next piece"
 
 [node name="light blue" type="Button" parent="."]
-offset_left = 1049.0
-offset_top = -69.0
-offset_right = 1130.0
-offset_bottom = -38.0
+offset_top = 112.0
+offset_right = 96.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_uix3s")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1s81o")
 text = "light blue"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="light blue"]
+z_index = -1
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 48.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6jn8i")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 show_behind_parent = true
-position = Vector2(669, 403)
+z_index = -2
+position = Vector2(663, 408)
 scale = Vector2(1.97018, 2.52725)
 texture = ExtResource("2_6dspc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(731, 388)
+position = Vector2(736, 240)
 offset = Vector2(100, 0)
-zoom = Vector2(0.53, 0.53)
+zoom = Vector2(0.395, 0.395)
 
 [node name="Frame" type="Sprite2D" parent="."]
 z_index = 3
@@ -115,11 +284,10 @@ scale = Vector2(11.0317, 17)
 texture = ExtResource("4_vnn8o")
 
 [node name="Frame3" type="Sprite2D" parent="."]
-position = Vector2(745, 78)
-scale = Vector2(18.9677, 10.9333)
+position = Vector2(745, 88.2662)
+scale = Vector2(18.9677, 10.5853)
 texture = ExtResource("5_4fqmk")
 
-[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="brown" to="." method="_on_brown_pressed"]
 [connection signal="pressed" from="yellow" to="." method="_on_yellow_pressed"]
 [connection signal="pressed" from="black" to="." method="_on_black_pressed"]
