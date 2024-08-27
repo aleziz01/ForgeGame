@@ -69,7 +69,7 @@ func _process(delta):
 		CurrentState = moving
 		var anim = $customer
 		anim.play("ShuffleLeft")
-	elif global.customercounter==1: 
+	elif global.customercounter==1:
 		CurrentState = idle
 		var anim = $customer
 		anim.play("Still")
